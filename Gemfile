@@ -94,3 +94,9 @@ gem 'rails-i18n'
 
 # font-awesome
 gem 'font-awesome-sass'
+
+# デプロイ関係
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
