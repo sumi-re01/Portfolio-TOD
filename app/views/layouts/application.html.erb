@@ -10,6 +10,15 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+        <header>
+          <%= render 'layouts/header' %>
+        </header>
+        <main class="main__field">
+          <%= yield %>
+        </main>
+    </div>
+
+    <footer>Sumi's Portfolio</footer>
   </body>
 </html>
