@@ -1,0 +1,90 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import 'font-awesome';
+
+ $link-color: black;
+ $background-color: #f58f8f;
+ $head-color: #5b8f8f;
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+
+ a {
+  text-decoration: none;
+  color: $link-color;
+ }
+
+ .field_with_errors {
+  // エラーメッセージでのフォーム崩れ防止
+   display: contents;
+ }
+
+
+ .container {
+    position: relative;
+  }
+
+ // headerメニュー
+ .menu {
+  display: flex;
+   height: 100px;
+   background-color: $head-color;
+   opacity: 0.7;
+
+   #logo {
+     width: 100px;
+     height: 100px;
+     background-image: image-url('logo1.png');
+     background-position: center;
+     background-size: cover;
+   }
+   #menu_trigger {
+    line-height: 100px;
+   }
+
+   .nav {
+    position: absolute;
+    right: 20px;
+    top: 40px;
+
+    .nav__list {
+      display: flex;
+      list-style: none;
+    }
+    .nav__item {
+      margin: 20px 30px 0;
+    }
+   }
+
+ }
+
+ // Footer
+ footer {
+  text-align: center;
+  line-height: 50px;
+  height: 50px;
+  background-color:  $head-color;
+  opacity: 0.7;
+ }
+
+
+ // メイン画面
+.main__field {
+  position: relative;
+}

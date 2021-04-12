@@ -60,3 +60,43 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#devise
+gem 'devise', git: "https://github.com/heartcombo/devise.git",  branch: "ca-omniauth-2"
+
+# Bootstrap
+gem 'bootstrap', '~> 4.5'
+
+# バグ
+gem 'pry-byebug'
+
+# jQuery
+gem 'jquery-rails'
+
+#画像投稿
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
+
+# 地図　住所→緯度経度
+gem 'geocoder'
+
+#SNS認証(google,twitter)
+gem 'omniauth', '1.9.1'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-twitter'
+gem 'omniauth-github'
+
+# 計画表順番
+gem 'acts_as_list'
+
+# エラーメッセージの日本語化
+gem 'rails-i18n'
+
+# font-awesome
+gem 'font-awesome-sass'
+
+# デプロイ関係
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
