@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @itinerary = @user.itineraries.new
-    @itineraries = @user.itineraries
+    @itineraries = @user.itineraries.all
   end
 
   def edit
