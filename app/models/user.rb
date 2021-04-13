@@ -7,6 +7,7 @@ class User < ApplicationRecord
   attachment :profile_image
 
   has_many :sns_credentials, dependent: :destroy
+  has_many :itineraries, dependent: :destroy
 
 
   def self.from_omniauth(auth)
