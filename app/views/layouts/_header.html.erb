@@ -1,14 +1,14 @@
 <div class="menu">
-  <%= link_to root_path do %>
-    <div id="logo"></div>
-  <% end %>
+    <%= link_to root_path do %>
+        <div id="logo"></div>
+    <% end %>
 
   <div id="menu_trigger">◆◆◆</div>
 
-  <nav class="nav">
+  <nav class="navigation">
       <ul class="nav__list">
         <li class="nav__item">
-            <%= link_to 'GALLERY', galleries_path, class:"nav_btn" %>
+            <%= link_to 'GALLERY', root_path, class:"nav_btn" %>
         </li>
         <% if user_signed_in? %>
           <li class="nav__item">
@@ -22,10 +22,10 @@
           </li>
         <% else %>
           <li class="nav__item">
-              <%= link_to 'LOG IN',  new_user_session_path, class:"btn" %>
+              <%= link_to 'LOG IN',  root_path, class:"btn" %>
           </li>
           <li class="nav__item">
-              <%= link_to 'FIRST VISIT', new_user_registration_path, class:"btn" %>
+              <%= link_to 'FIRST VISIT', root_path, class:"btn" %>
           </li>
         <% end %>
       </ul>
