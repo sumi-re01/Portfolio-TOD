@@ -1,0 +1,10 @@
+<div class="itinerary__index">
+    <% itineraries.each do |itinerary| %>
+    <div class="box">
+       <%= link_to itinerary_path(itinerary) do %>
+          <span><%= itinerary.date %></span>
+          <span><%= itinerary.title %></span>
+       <% end %>
+    </div>
+    <% end %>
+</div>
