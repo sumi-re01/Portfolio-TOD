@@ -1,16 +1,26 @@
 class ItinerariesController < ApplicationController
 
     def create
+      # current_userについては見直し必。繰り返しをまとめる
       itinerary = Itinerary.new(itinerary_params)
       itinerary.user_id = current_user.id
       if itinerary.save
-        redirect_to user_path(current_user)
+        @itineraries = current_user.itineraries.all
+        render :index
       else
-        @user = User.find(params[:id])
-        @itineraries = @user.itineraries.all
+        @itineraries = current_user.itineraries.all
         render 'users/show'
       end
     end
+
+    def destroy
+      itinerary = Itinerary.find(params[:id])
+      itinerary.destroy
+
+      @itineraries = current_user.itineraries.all
+      render 'itineraries/index'
+    end
+
 
     def show
     end

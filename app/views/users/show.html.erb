@@ -14,7 +14,7 @@
         </div>
 
         <div class="itinerary__new">
-          <%= form_with model: @itinerary, url: itineraries_path, local:true do |f| %>
+          <%= form_with model: @itinerary, url: itineraries_path, remote:true do |f| %>
               <div class="formbox">
                 <%= f.text_field :title, placeholder:"Please name your trip", class:"form" %>
                 <%= f.date_field :date, class:"form date" %>

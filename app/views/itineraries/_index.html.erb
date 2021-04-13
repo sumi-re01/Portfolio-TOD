@@ -4,6 +4,7 @@
        <%= link_to itinerary_path(itinerary) do %>
           <span><%= itinerary.date %></span>
           <span><%= itinerary.title %></span>
+          <span><%= link_to "✖", itinerary_path(itinerary), method: :delete, remote: true %></span>
        <% end %>
     </div>
     <% end %>
