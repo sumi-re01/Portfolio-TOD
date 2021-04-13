@@ -22,9 +22,9 @@
  $form_btn: #67c7c4;
 
  * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
  }
 
  a {
@@ -32,38 +32,38 @@
   color: $link-color;
  }
 
- .field_with_errors {
-  // エラーメッセージでのフォーム崩れ防止
-   display: contents;
+ .container {
+  position: relative;
  }
 
-
- .container {
-    position: relative;
-  }
+ // エラーメッセージでのフォーム崩れ防止
+ .field_with_errors {
+  display: contents;
+ }
 
  // headerメニュー
  .menu {
   display: flex;
-   height: 100px;
-   background-color: $head-color;
-   opacity: 0.7;
+  height: 100px;
+  background-color: $head-color;
+  opacity: 0.7;
 
-   #logo {
-     width: 100px;
-     height: 100px;
-     background-image: image-url("logo1.png");
-     background-position: center;
-     background-size: cover;
-   }
-   #menu_trigger {
-    line-height: 100px;
-   }
+  #logo {
+    width: 100px;
+    height: 100px;
+    background-image: image-url("logo1.png");
+    background-position: center;
+    background-size: cover;
+  }
 
-   .nav {
-    position: absolute;
-    right: 20px;
-    top: 40px;
+  #menu_trigger {
+   line-height: 100px;
+  }
+
+  .nav {
+   position: absolute;
+   right: 20px;
+   top: 40px;
 
     .nav__list {
       display: flex;
@@ -72,8 +72,7 @@
     .nav__item {
       margin: 20px 30px 0;
     }
-   }
-
+  }
  }
 
  // Footer
