@@ -23,6 +23,8 @@ class ItinerariesController < ApplicationController
 
 
     def show
+      @itinerary = Itinerary.find(params[:id])
+      @plan = Plan.new
     end
 
     def update
