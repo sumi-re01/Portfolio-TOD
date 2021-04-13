@@ -1,0 +1,47 @@
+<div class="devise">
+    <h1 class="page-name">SIGN UP</h1>
+    <div class="form__group">
+
+      <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="form__item">
+        <%= f.label :profile_image %><br />
+        <%= f.attachment_field :profile_image %>
+      </div>
+
+      <div class="form__item">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "user name", class:"form__field" %>
+      </div>
+
+      <div class="form__item">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autocomplete: "email", class:"form__field" %>
+      </div>
+
+      <% if @sns_id.present? %>
+        <%= hidden_field_tag :sns_auth, true %>
+      <% else %>
+        <div class="form__item">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class:"form__field" %>
+        </div>
+
+        <div class="form__item">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form__field" %>
+        </div>
+      <% end %>
+        <%= f.submit "Sign up", class:"form__btn" %>
+     <% end %>
+     <%= link_to "Log in", new_session_path(resource_name) %><br />
+     <%= link_to 'Sign up with Twitter', user_twitter_omniauth_authorize_path %><br />
+     <%= link_to 'Sign up with Google', user_google_oauth2_omniauth_authorize_path %>
+
+
+    </div>
+</div>

@@ -18,6 +18,7 @@
  $link-color: black;
  $background-color: #f58f8f;
  $head-color: #5b8f8f;
+ $form_btn: #67c7c4;
 
  * {
    margin: 0;
@@ -88,3 +89,39 @@
 .main__field {
   position: relative;
 }
+
+// ページ名
+.page-name {
+  font-weight: 400;
+  padding: 40px 40px 0 40px;
+}
+
+// フォームスタイル(Log_in sign_up)
+ .form__group {
+   width: 70%;
+   margin: 20px auto;
+ }
+ .form__item {
+   margin-bottom: 10px;
+
+    .form__field {
+     width: 100%;
+     height: 40px;
+   }
+
+    .form__area {
+     width: 100%;
+     height: 400px;
+   }
+ }
+ .form__btn {
+   width: 100%;
+   height: 40px;
+   margin: 20px auto;
+   color: white;
+   font-size: 20px;
+   background-color: $form_btn;
+   border-radius: 3px;
+   padding: 5px 10px;
+   border: 1px solid white;
+ }
