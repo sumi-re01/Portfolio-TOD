@@ -52,4 +52,15 @@ $form_btn: #f5b09b;
       background-color: $form_btn;
     }
   }
+
+  .itinerary__index {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+
+    .box {
+      padding: 10px 40px;
+      border-bottom: 2px dashed black;
+    }
+  }
 }
