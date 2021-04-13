@@ -1,0 +1,30 @@
+<div id="user">
+
+    <h1 class="page-name">MY PAGE</h1>
+
+        <div class="user__wrap">
+            <%= attachment_image_tag @user, :profile_image, format: 'jpg', fallback: "no-image.jpeg", id: "prf-img" %>
+            <div class="user__content">
+              <p class="name"><%= @user.name %></p>
+              <%= link_to edit_user_path(@user.id) do %>
+                <i class="fas fa-edit"></i>
+              <% end %>
+              <btn class="btn">ブックマーク</btn>
+            </div>
+        </div>
+
+        <div class="itinerary__new">
+          <%= form_with model: @itinerary, url: itineraries_path, remote:true do |f| %>
+              <div class="formbox">
+                <%= f.text_field :title, placeholder:"Please name your trip", class:"form" %>
+                <%= f.date_field :date, class:"form date" %>
+              </div>
+
+            <%= f.submit "Create", class:"btn" %>
+          <% end %>
+        </div>
+        <div id="itineraries">
+          <%= render 'itineraries/index', itineraries: @itineraries %>
+        </div>
+
+  </div>
