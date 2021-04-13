@@ -1,3 +1,26 @@
 // Place all the styles related to the itineraries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#itinerary {
+
+  .contents {
+
+  }
+
+  #travel__form {
+
+  }
+  .form__box {
+    width: 300px;
+    .form {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 15px;
+    }
+    .btn {
+      width: 100%;
+      height: 30px;
+    }
+  }
+}
