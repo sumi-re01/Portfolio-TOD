@@ -1,14 +1,14 @@
 <ul id="plan__index">
-  <% itinerary.plans.each do |plan| %>
+  <% travel.travel_plans.each do |travel_plan| %>
       <li class="plan__wrap">
           <div class="flex-center" id="bar">
             <i class="fa fa-bars"></i>
           </div>
           <div class="plan__item">
-            <p><%= plan.text %></p>
+            <p><%= travel_plan.text %></p>
           </div>
           <div class="flex-center btn">
-            <%#=link_to '✖', itinerary_plan_path(plan.itinerary, plam), method: :delete, remote:true %>
+            <%#=link_to '✖', travel_travel_plan_path(travel_plan.travel, travel_plan), method: :delete, remote:true %>
           </div>
       </li>
   <% end %>

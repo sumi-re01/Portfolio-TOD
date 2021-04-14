@@ -8,7 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:twitter, :google_oauth2]
 
   has_many :sns_credentials, dependent: :destroy
-  has_many :itineraries, dependent: :destroy
+  has_many :travels, dependent: :destroy
   has_many :marks, dependent: :destroy
 
   validates :name, length: { minimum: 1, maximum: 10 }

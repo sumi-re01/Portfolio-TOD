@@ -1,0 +1,11 @@
+<div class="travel__index">
+    <% travels.each do |travel| %>
+    <div class="box">
+       <%= link_to travel_path(travel) do %>
+          <span><%= travel.date %></span>
+          <span><%= travel.title %></span>
+          <span><%= link_to "✖", travel_path(travel), method: :delete, remote: true %></span>
+       <% end %>
+    </div>
+    <% end %>
+</div>

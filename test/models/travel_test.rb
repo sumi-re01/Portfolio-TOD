@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PlansControllerTest < ActionDispatch::IntegrationTest
+class TravelTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

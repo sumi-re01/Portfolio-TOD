@@ -13,8 +13,8 @@
             </div>
         </div>
 
-        <div class="itinerary__new">
-            <%= form_with model: @itinerary, url: itineraries_path, remote:true do |f| %>
+        <div class="travel__new">
+            <%= form_with model: @travel, url: travels_path, remote:true do |f| %>
                 <div class="formbox">
                     <%= f.text_field :title, placeholder:"Please name your trip", class:"form" %>
                     <%= f.date_field :date, class:"form date" %>
@@ -22,8 +22,8 @@
                 <%= f.submit "Create", class:"btn" %>
             <% end %>
         </div>
-        <div id="itineraries">
-            <%= render 'itineraries/index', itineraries: @itineraries %>
+        <div id="travel">
+            <%= render 'travels/index', travels: @travels %>
         </div>
 
   </div>

@@ -1,0 +1,24 @@
+<div id="travel">
+  <h1 class="page-name"><%= @travel.date %></h1>
+
+  <div class="contents">
+    <div id="travel__form">
+      <%= form_with model: [@travel, @travel_plan], method: :post do |f| %>
+        <%= render 'layouts/errors', model: f.object %>
+        <div class="form__box">
+          <%= f.text_field :text, class:"form" %><br />
+          <%= f.submit 'Add', class:"btn" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="travel__plans">
+      <h2><%= @travel.title %> <i class="far fa-edit"></i></h2>
+
+      <div id="plans">
+        <%= render 'travels/plans', travel: @travel %>
+      </div>
+    </div>
+  </div>
+
+</div>
