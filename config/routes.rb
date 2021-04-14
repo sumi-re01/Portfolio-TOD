@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       resources :marks, only: [:create, :destroy]
     end
 
-
+    patch 'travels/travel/:id/sort', to: 'travels#sort'
     resources :travels, only: [:index, :create, :show, :destroy] do
       resources :travel_plans, only: [:create, :update, :destroy]
     end

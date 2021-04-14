@@ -3,9 +3,12 @@ class TravelPlansController < ApplicationController
   def create
     @travel = Travel.find(params[:travel_id])
     travel_plan = @travel.travel_plans.create(travel_plan_params)
-    travel_plan.save
-
-    render 'travels/plans'
+    if travel_plan.save
+      render 'travels/plans'
+    else
+      @travel = Travel.find(params[:travel_id])
+      render 'travels/show'
+    end
   end
 
   def update

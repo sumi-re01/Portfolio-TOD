@@ -2,25 +2,72 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#travel {
+// show
+.contents {
+  width: 80%;
+  padding: 20px 0;
+  margin: 0 auto;
+  display: flex;
+}
 
-  .contents {
+.travel__form {
 
+  width: 230px;
+  padding: 20px 15px;
+
+  .form {
+    width: 200px;
+    height: 60px;
+    margin-bottom: 15px;
   }
-
-  #travel__form {
-
-  }
-  .form__box {
-    width: 300px;
-    .form {
-      width: 100%;
-      height: 40px;
-      margin-bottom: 15px;
-    }
-    .btn {
-      width: 100%;
-      height: 30px;
-    }
+  .form__btn {
+    margin: 0 ;
   }
 }
+
+.travel__plans {
+
+  width: 600px;
+  margin: 0 auto;
+
+  h2 {
+    margin: 0 20px 20px;
+  }
+  .plan__box {
+    width: 90%;
+    margin: 20px auto;
+    background-color: #a4ede5;
+  }
+// _plans.html.erb内
+  .plan__wrap {
+    display: flex;
+    height: 50px;
+    border-bottom: 1px solid black;
+    position: relative;
+
+    #bar {
+      cursor: crosshair;
+      width: 50px;
+      background: #81D8D0;
+    }
+    .btn {
+      width: 50px;
+      position: absolute;
+      right: 0;
+    }
+    .plan__item {
+      padding: 0 30px;
+      line-height: 50px;
+    }
+    .flex-center {
+      text-align: center;
+      line-height: 50px;
+     }
+  }
+}
+
+  .sortable-chosen {
+    border: 2px solid white;
+    transform: scale( 1.1, 1.1);
+    background-color: #81D8D0;
+  }
