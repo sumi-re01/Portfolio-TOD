@@ -1,9 +1,9 @@
-<div id="itinerary">
-  <h1 class="page-name"><%= @itinerary.date %></h1>
+<div id="travel">
+  <h1 class="page-name"><%= @travel.date %></h1>
 
   <div class="contents">
     <div id="travel__form">
-      <%= form_with model: [@itinerary, @plan], method: :post do |f| %>
+      <%= form_with model: [@travel, @travel_plan], method: :post do |f| %>
         <%= render 'layouts/errors', model: f.object %>
         <div class="form__box">
           <%= f.text_field :text, class:"form" %><br />
@@ -13,10 +13,10 @@
     </div>
 
     <div class="travel__plans">
-      <h2><%= @itinerary.title %> <i class="far fa-edit"></i></h2>
+      <h2><%= @travel.title %> <i class="far fa-edit"></i></h2>
 
       <div id="plans">
-        <%= render 'itineraries/plans', itinerary: @itinerary %>
+        <%= render 'travels/plans', travel: @travel %>
       </div>
     </div>
   </div>

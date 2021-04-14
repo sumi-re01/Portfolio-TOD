@@ -3,8 +3,8 @@ class UsersController < ApplicationController
   before_action :set_user
 
   def show
-    @itinerary = @user.itineraries.new
-    @itineraries = @user.itineraries.all
+    @travel = @user.travels.new
+    @travels = @user.travels.all
   end
 
   def edit

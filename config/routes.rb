@@ -19,8 +19,8 @@ Rails.application.routes.draw do
     end
 
 
-    resources :itineraries, only: [:index, :create, :show, :destroy] do
-      resources :plans, only: [:create, :update, :destroy]
+    resources :travels, only: [:index, :create, :show, :destroy] do
+      resources :travel_plans, only: [:create, :update, :destroy]
     end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

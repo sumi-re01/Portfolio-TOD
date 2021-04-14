@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2021_04_14_040916) do
   end
 
   create_table "travel_plans", force: :cascade do |t|
-    t.integer "itinerary_id", null: false
+    t.integer "travel_id", null: false
     t.string "text", null: false
     t.integer "position", null: false
     t.datetime "created_at", null: false
