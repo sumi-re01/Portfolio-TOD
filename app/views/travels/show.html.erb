@@ -5,10 +5,8 @@
     <div class="travel__form">
       <%= form_with model:@travel_plan, url: travel_travel_plans_path(@travel) , method: :post do |f| %>
         <%= render 'layouts/errors', model: f.object %>
-        <div class="form__box">
-          <%= f.text_field :text, class:"form" %><br />
-          <%= f.submit 'Add', class:"form__btn" %>
-        </div>
+        <%= f.text_field :text, class:"form" %><br />
+        <%= f.submit 'Add', class:"form__btn" %>
       <% end %>
     </div>
 
