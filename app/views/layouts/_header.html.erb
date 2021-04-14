@@ -14,8 +14,6 @@
         <li class="nav__item">
           <%= link_to 'MY PAGE', user_path(current_user.id), class:"btn" %>
         </li>
-        <li class="nav__item">
-          <%= link_to 'ITINERARY',  itineraries_path, class:"btn" %>
         </li>
         <li class="nav__item">
           <%= link_to 'LOG OUT', destroy_user_session_path, method: :delete, class:"btn" %>
