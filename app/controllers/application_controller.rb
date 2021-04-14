@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def configure_pergit pumitted_parameters
+  def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :profile_image])
   end
 
