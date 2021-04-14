@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   root to: 'homes#top'
 
+    devise_scope :user do
+      post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+    end
+
     devise_for :users, controllers: {
       sessions: 'users/sessions',
       registrations: 'users/registrations',
       omniauth_callbacks: 'users/omniauth_callbacks'
     }
-
+    # 新規登録画面のリロード時のエラー防止
     get '/users', to: redirect("/users/sign_up")
 
     resources :users, only: [:show, :edit, :update]
