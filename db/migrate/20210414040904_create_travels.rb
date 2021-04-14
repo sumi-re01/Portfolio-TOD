@@ -1,6 +1,6 @@
-class CreateItineraries < ActiveRecord::Migration[5.2]
+class CreateTravels < ActiveRecord::Migration[5.2]
   def change
-    create_table :itineraries do |t|
+    create_table :travels do |t|
       t.integer :user_id, null: false
       t.string :title, null: false
       t.date :date, null: false

@@ -9,8 +9,9 @@ class UsersController < ApplicationController
 
   def edit
     if @user == current_user
+      render :edit
     else
-      render to user_path(current_user.id)
+      redirect_to user_path(current_user.id)
     end
   end
 

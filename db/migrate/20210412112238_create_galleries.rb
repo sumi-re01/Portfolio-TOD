@@ -1,8 +1,8 @@
 class CreateGalleries < ActiveRecord::Migration[5.2]
   def change
     create_table :galleries do |t|
-      # Itinerary１につきGalleryも１
-      t.belongs_to :itinerary
+      # travel1につきGalleryも１
+      t.belongs_to :travel
       t.boolean :public_status, null: false
       t.string :text
       t.string :address

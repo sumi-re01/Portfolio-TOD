@@ -2,8 +2,8 @@ class PlansController < ApplicationController
 
   def create
     @itinerary = Itinerary.find(params[:itinerary_id])
-    plan = @itinerary.plans.create(plan_params)
-    plan.save
+    itinerary_plan = @itinerary.plans.create(plan_params)
+    itinerary_plan.save
 
     render 'itineraries/plans'
   end
