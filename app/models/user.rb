@@ -9,7 +9,15 @@ class User < ApplicationRecord
   has_many :sns_credentials, dependent: :destroy
   has_many :itineraries, dependent: :destroy
 
+  def self.guest
+    find_or_create_by!(name: "ゲストさん", email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
 
+
+
+  # SNS認証（登録済みuserかどうか）
   def self.from_omniauth(auth)
   sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
 
