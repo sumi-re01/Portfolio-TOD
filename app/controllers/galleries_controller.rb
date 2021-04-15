@@ -10,6 +10,7 @@ class GalleriesController < ApplicationController
 
   def create
     gallery = Gallery.new(gallery_params)
+    gallery.user_id = current_user.id
     if gallery.save
       redirect_to gallery_path(gallery)
     else
@@ -19,12 +20,18 @@ class GalleriesController < ApplicationController
   end
 
   def edit
+    @gallery = Gallery.find(patams[:id])
   end
 
   def update
   end
 
   def destroy
+  end
+
+  def show
+    @gallery = Gallery.find(params[:id])
+    @user = @gallery.travel.user
   end
 
   def index

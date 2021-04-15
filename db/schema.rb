@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_04_14_040916) do
 
   create_table "galleries", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "travel_id"
     t.boolean "public_status", default: true, null: false
     t.string "text"

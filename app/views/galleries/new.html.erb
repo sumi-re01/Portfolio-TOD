@@ -10,27 +10,14 @@
       <%#= f.hidden_field @gallery.travel_id %>
       <%= f.collection_select(:travel_id, @travels, :id, :date, {prompt:"共有する旅の日程を選択してください", class:"select_box"}) %><br />
 
-      <%= f.text_area :text, placeholder:"body", class:"form" %><br />
+      <%= f.text_area :text, placeholder:"body", class:"text-form" %><br />
 
       <%= f.attachment_field :gallery_images_images, multiple: true %><br />
 
-      <!--<form onsubmit="return false;">-->
-      <!--  <input type="text" value="仁和寺" id="address">-->
-      <!--  <button type="button" value="検索" id="map_search">検索</button>-->
-      <!--</form>-->
-      <!-- 地図を表示させる要素 -->
-      <!--<div id="map" style="width: 500px;height: 350px;"></div>-->
-
-      <!--緯度 <input type="text" id="lat" value=""><br>-->
-      <!--経度 <input type="text" id="lng" value=""><br>-->
-      <!--<%= f.hidden_field :latitude,  value:"" %>-->
-      <!--<%= f.hidden_field :longitude, value:"" %>-->
+      <%= f.text_field :address, class:"form" %>
 
       <%= f.submit "CREATE" %>
     <% end %>
   </div>
 
-  <%= javascript_include_tag 'galleries' %>
-  <!--GOOGLE　MAP API-->
-  <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['MAP_API_KEY'] %>&callback=initMap&libraries=&v=weekly"async></script>
 </div>

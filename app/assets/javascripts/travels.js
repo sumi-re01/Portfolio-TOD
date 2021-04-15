@@ -11,6 +11,7 @@ $(function() {
 
        onUpdate: function (evt) {
         $.ajax({
+          // positionの変更
           url: 'travel/' + $("#travel_id").val() + '/sort',
           type: 'PATCH',
           data: { from: evt.oldIndex, to: evt.newIndex }

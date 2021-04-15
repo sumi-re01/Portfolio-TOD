@@ -1,0 +1,31 @@
+<div id="gallery">
+
+  <div class="gallery__text">
+    <h2><%= @gallery.travel.title %></h2>
+    <p><%= @gallery.text %><br /><%= l @gallery.created_at, format: :short %></p>
+    <% if user_signed_in? && @gallery.travel.user_id == current_user.id %>
+      <%= link_to "EDIT", edit_gallery_path(@gallery.id) %>
+      <%= link_to "DELETE", gallery_path(@gallery.id), method: :delete, data: {comfirm: "記事を削除しますか？"} %>
+    <% end %>
+  </div>
+
+  <div class="gallery__region">
+    at <%= @gallery.address %>
+    <div id='map'></div>
+  </div>
+
+  <div class="user_info">
+    <%= attachment_image_tag @user, :profile_image, format: 'jpg', fallback: "no-image.jpeg", class: "prf-img" %>
+    <span><%=link_to  @user.name, user_path(@user.id) %></span>
+  </div>
+
+  <!--緯度経度をgalleries.jsに渡す-->
+  <%= javascript_tag do %>
+    window.lat = '<%= @gallery.latitude %>';
+    window.lng = '<%= @gallery.longitude %>';
+  <% end %>
+  <%= javascript_include_tag 'galleries' %>
+  <!--GOOGLE　MAP API-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['MAP_API_KEY'] %>&callback=initMap&libraries=&v=weekly"async></script>
+
+</div>
