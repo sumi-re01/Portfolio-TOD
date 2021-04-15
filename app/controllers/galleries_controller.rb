@@ -1,8 +1,10 @@
 class GalleriesController < ApplicationController
 
   def new
-    @gallery = Gallery.new
-    @travels = current_user.travels.all
+    # 紐付けたいtravelを取得
+    @travel = Travel.where(id: params[:gallery][:travel_id])
+    @gallery = Gallery.new(gallery_params)
+    @gallery.gallery_images.build
   end
 
   def create
@@ -30,7 +32,7 @@ class GalleriesController < ApplicationController
   private
 
   def gallery_params
-    params.require(:gallery).permit(:travel_id, :text, :address, :latitude, :longitude, :public_status)
+    params.require(:gallery).permit(:travel_id, :text, :address, :latitude, :longitude, :public_status, gallery_images_images: [])
   end
 
 end

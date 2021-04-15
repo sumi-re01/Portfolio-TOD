@@ -1,10 +1,29 @@
 <div id="gallery">
   <h1 class="page-name">Share</h1>
 
+  <div class="gallery__title">
+    <%#= @travel.title %>
+  </div>
+
   <div class="gallery__new">
     <%= form_with model:@gallery, local:true do |f| %>
-      <%= f.collection_select(:travel_id, @travels, :id, :date, {prompt:"共有する旅を選択してください", class:"select_box"}) %><br />
+
+
       <%= f.text_area :text, placeholder:"body", class:"form" %><br />
+
+      <%= f.attachment_field :gallery_images_images, multiple: true %><br />
+
+      <form onsubmit="return false;">
+        <input type="text" value="株式会社Maromaro" id="address">
+        <button type="button" value="検索" id="map_button">検索</button>
+      </form>
+      <!-- 地図を表示させる要素 -->
+      <div class="map_box01"><div id="map-canvas" style="width: 500px;height: 350px;"></div></div>
+
+      <p>マーカーのある位置の<br>
+      緯度 <input type="text" id="lat" value=""><br>
+      経度 <input type="text" id="lng" value=""><br>
+      地図上をクリックするとマーカーを移動できます。</p>
 
       <%= f.submit "CREATE", class:"btn" %>
     <% end %>

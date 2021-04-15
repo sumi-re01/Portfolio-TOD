@@ -27,7 +27,10 @@
   </div>
 
   <div class="gallery__index">
-    <%= link_to "Share of your trip", new_gallery_path %>
+    <%=form_with model: @gallery, local: true, url: new_gallery_path do |f| %>
+      <%= f.collection_select(:travel_id, @travels, :id, :date, {prompt:"共有する旅の日程を選択してください", class:"select_box"}) %><br />
+      <%= f.submit "日記を書く" %>
+    <% end %>
   </div>
 
 </div>
