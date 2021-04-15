@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'galleries/new'
+  get 'galleries/edit'
+  get 'galleries/index'
   root to: 'homes#top'
 
     devise_scope :user do
@@ -14,7 +17,7 @@ Rails.application.routes.draw do
     get '/users', to: redirect("/users/sign_up")
 
     resources :users, only: [:show, :edit, :update]
-    resources :galleries, only: [:index, :new, :create, :edit, :update, :show, :destroy] do
+    resources :galleries do
       resources :marks, only: [:create, :destroy]
     end
 

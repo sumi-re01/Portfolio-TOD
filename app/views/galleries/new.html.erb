@@ -1,0 +1,12 @@
+<div id="gallery">
+  <h1 class="page-name">Share</h1>
+
+  <div class="gallery__new">
+    <%= form_with model:@gallery, local:true do |f| %>
+      <%= f.collection_select(:travel_id, @travels, :id, :date, {prompt:"共有する旅を選択してください", class:"select_box"}) %><br />
+      <%= f.text_area :text, placeholder:"body", class:"form" %><br />
+
+      <%= f.submit "CREATE", class:"btn" %>
+    <% end %>
+  </div>
+</div>
