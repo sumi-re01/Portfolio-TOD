@@ -17,12 +17,14 @@ Rails.application.routes.draw do
     get '/users', to: redirect("/users/sign_up")
 
     resources :users, only: [:show, :edit, :update]
-    resources :galleries do
+
+    post '/galleries/new', to: 'galleries#new', as: 'new_gallery'
+    resources :galleries, only: [:new, :create, :edit, :destroy, :index, :show] do
       resources :marks, only: [:create, :destroy]
     end
 
     patch 'travels/travel/:id/sort', to: 'travels#sort'
-    resources :travels, only: [:index, :create, :show, :destroy] do
+    resources :travels, only: [:create, :destroy, :index, :show] do
       resources :travel_plans, only: [:create, :update, :destroy]
     end
 

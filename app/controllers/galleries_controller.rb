@@ -2,8 +2,9 @@ class GalleriesController < ApplicationController
 
   def new
     # 紐付けたいtravelを取得
-    @travel = Travel.where(id: params[:gallery][:travel_id])
-    @gallery = Gallery.new(gallery_params)
+    # @travel = Travel.where(id: params[:gallery][:travel_id])
+    @travels = current_user.travels.all
+    @gallery = Gallery.new
     @gallery.gallery_images.build
   end
 

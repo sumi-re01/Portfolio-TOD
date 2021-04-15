@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def show
     @travel = @user.travels.new
     @travels = @user.travels.all
-    @gallery = Gallery.new
+    # @gallery = Gallery.new
   end
 
   def edit
