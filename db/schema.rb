@@ -13,22 +13,17 @@
 ActiveRecord::Schema.define(version: 2021_04_14_040916) do
 
   create_table "galleries", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "travel_id"
-    t.boolean "public_status", null: false
+    t.boolean "public_status", default: true, null: false
     t.string "text"
     t.string "address"
     t.float "latitude"
     t.float "longitude"
+    t.json "images"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["travel_id"], name: "index_galleries_on_travel_id"
-  end
-
-  create_table "gallery_images", force: :cascade do |t|
-    t.integer "gallery_id", null: false
-    t.string "image_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "marks", force: :cascade do |t|

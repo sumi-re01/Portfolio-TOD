@@ -4,9 +4,9 @@ class TravelsController < ApplicationController
 # user/show内
 
   def create
-    # current_userについては見直し必。繰り返しをまとめる
     travel = Travel.new(travel_params)
     travel.user_id = current_user.id
+
     if travel.save
       # travels/index.js.erbへ飛んでusers/showのtravel一覧を取得
       @travels = current_user.travels.all
@@ -21,10 +21,11 @@ class TravelsController < ApplicationController
   def destroy
     @travel.destroy
 
-    @travels = current_user.travels.all
     # index.js.erbへ
+    @travels = current_user.travels.all
     render 'travels/index'
   end
+
 
 # travels/show内
 
