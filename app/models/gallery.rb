@@ -9,6 +9,7 @@ class Gallery < ApplicationRecord
   after_validation :geocode, if: :address_changed?
 
   validates :text, presence: true
+  validates :images, presence: true
   validates :public_status, inclusion: { in: [true, false] }
 
 end

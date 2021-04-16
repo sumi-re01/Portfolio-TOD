@@ -15,7 +15,7 @@ class GalleriesController < ApplicationController
     if gallery.save
       redirect_to gallery_path(gallery)
     else
-      @travel = current_user.travels.all
+      @travels = current_user.travels.all
       render :new
     end
   end
@@ -29,6 +29,7 @@ class GalleriesController < ApplicationController
   def destroy
     if @gallery.user_id = current_user.id
       @gallery.destroy
+      redirect_to user_path(current_user)
     else
       redirect_to gallery_path(@gallery)
     end
