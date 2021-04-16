@@ -1,4 +1,13 @@
 <div id="gallery">
+  <div class="gallery__wrap"></div>
+
+  <div class="travel__box">
+    <% @gallery.travel.travel_plans.each do |plan|%>
+      <div class="travel__item">
+        <%= plan.text %>
+      </div>
+    <% end %>
+  </div>
 
   <div class="gallery__images">
     <% @gallery.images.each do |image| %>

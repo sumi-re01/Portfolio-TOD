@@ -1,2 +1,16 @@
-<h1>Galleries#index</h1>
-<p>Find me in app/views/galleries/index.html.erb</p>
+<div id="gallery">
+  <div class="galleries__index">
+    <h1 class="page-name">GALLERY</h1>
+
+    <% @galleries.each do |gallery| %>
+      <div class="galleries__box">
+        <%= link_to gallery_path(gallery) do %>
+          <%= image_tag gallery.images[1].to_s %>
+        <% end %>
+        <%= gallery.travel.title %>
+        <%= gallery.address %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
