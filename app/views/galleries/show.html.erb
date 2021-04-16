@@ -1,5 +1,11 @@
 <div id="gallery">
 
+  <div class="gallery__images">
+    <% @gallery.images.each do |image| %>
+      <%= image_tag image.to_s %>
+    <% end %>
+  </div>
+
   <div class="gallery__text">
     <h2><%= @gallery.travel.title %></h2>
     <p><%= @gallery.text %><br /><%= l @gallery.created_at, format: :short %></p>

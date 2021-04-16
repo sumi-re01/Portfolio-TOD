@@ -5,7 +5,6 @@ class GalleriesController < ApplicationController
     # @travel = Travel.where(id: params[:gallery][:travel_id])
     @travels = current_user.travels.all
     @gallery = Gallery.new
-    @gallery.gallery_images.build
   end
 
   def create
@@ -40,7 +39,7 @@ class GalleriesController < ApplicationController
   private
 
   def gallery_params
-    params.require(:gallery).permit(:travel_id, :text, :address, :latitude, :longitude, :public_status, gallery_images_images: [])
+    params.require(:gallery).permit(:travel_id, :text, :address, :latitude, :longitude, :public_status, { images: [] })
   end
 
 end
