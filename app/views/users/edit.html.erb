@@ -1,0 +1,22 @@
+<div id="user">
+  <h1 class="page-name">EDIT</h1>
+
+  <div class="form__group">
+    <%= form_with model:@user, local: true do |f| %>
+    <%= render 'layouts/errors', model: f.object %>
+      <div class="form__item">
+        <%= f.label :profile_image %><br />
+        <%= f.attachment_field :profile_image %>
+      </div>
+      <div class="form__item">
+        <%= f.label :name %><br />
+        <%= f.text_area :name, class:"form__field" %>
+      </div>
+      <div class="form__item">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, class:"form__field" %>
+      </div>
+      <%= f.submit "Update", class:"form__btn" %>
+    <% end %>
+  </div>
+</div>

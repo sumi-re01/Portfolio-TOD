@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def show
     @travel = @user.travels.new
     @travels = @user.travels.all
-    # @gallery = Gallery.new
+    @galleries = Gallery.where(user_id: @user.id).all
   end
 
   def edit
@@ -17,9 +17,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
-    if user == current_user
-      user.update(user_params)
+    if @user == current_user
+      @user.update(user_params)
       redirect_to user_path(user.id)
     else
       redirect_to user_path(current_user.id)
