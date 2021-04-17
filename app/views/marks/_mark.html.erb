@@ -1,0 +1,9 @@
+<% if gallery.marked_by?(current_user) %>
+  <%= link_to gallery_mark_path(gallery, current_user), method: :delete, remote: :true do %>
+    <i class="fas fa-bookmark"></i>
+  <% end %>
+<% else %>
+  <%= link_to gallery_marks_path(gallery), method: :post, remote: :true do %>
+    <i class="far fa-bookmark"></i>
+  <% end %>
+<% end %>
