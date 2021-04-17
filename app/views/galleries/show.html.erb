@@ -17,7 +17,16 @@
 
   <div class="gallery__text">
     <h2><%= @gallery.travel.title %></h2>
-    <p><%= @gallery.text %><br /><%= l @gallery.created_at, format: :short %></p>
+
+    <div class="book-mark" id="mark_<%= @gallery.id %>">
+      <%= render partial: 'marks/mark', locals: {gallery: @gallery}%>
+    </div>
+
+    <p>
+      <%= @gallery.text %><br />
+      <%= l @gallery.created_at, format: :short %>
+    </p>
+
     <% if user_signed_in? && @gallery.travel.user_id == current_user.id %>
       <%= link_to "EDIT", edit_gallery_path(@gallery.id) %>
       <%= link_to "DELETE", gallery_path(@gallery.id), method: :delete, data: {comfirm: "記事を削除しますか？"} %>

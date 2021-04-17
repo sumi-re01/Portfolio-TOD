@@ -9,4 +9,8 @@ class Gallery < ApplicationRecord
   validates :images, presence: true
   validates :public_status, inclusion: { in: [true, false] }
 
+  def marked_by?(user)
+    marks.where(user_id: user.id).exists?
+  end
+
 end
