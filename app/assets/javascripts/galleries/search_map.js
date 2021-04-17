@@ -1,8 +1,9 @@
 /* global google */
 
 // hidden_field
-let lat = document.getElementById('gallery_latitude');
-let lng = document.getElementById('gallery_longitude');
+const place_address = document.getElementById('gallery_address');
+const place_lat = document.getElementById('gallery_latitude');
+const place_lng = document.getElementById('gallery_longitude');
 
 
 let getMap = (function() {
@@ -24,25 +25,43 @@ let getMap = (function() {
 
         map.setCenter(results[0].geometry.location);
 
-        // hidden_fieldへアドレス、緯度軽度の保存
-        document.getElementById('gallery_address').value = address
-        lat.value = results[0].geometry.location.lat();
-        lng.value = results[0].geometry.location.lng();
+        // hidden_fieldへアドレス,緯度,軽度の保存
+        place_address.value = address
+        place_lat.value = results[0].geometry.location.lat();
+        place_lng.value = results[0].geometry.location.lng();
 
         marker = new google.maps.Marker({
           map: map,
           position: results[0].geometry.location
         });
 
-      // ジオコーディングが成功しなかった場合
       } else {
         console.log('Geocode was not successful for the following reason: ' + status);
       }
 
     });
+
+    map.addListener('click', function(e) {
+      getClickLatLng(e.latLng, map);
+    });
+
+    function getClickLatLng(lat_lng, map) {
+
+      place_lat.value=lat_lng.lat();
+      place_lng.value=lat_lng.lng();
+
+      marker.setMap(null);
+      marker = new google.maps.Marker({
+        position: lat_lng,
+        map: map
+      });
+
+      map.panTo(lat_lng);
+    }
   }
 
-  //inputのvalueで検索して地図を表示
+
+  // 検索
   return {
     getAddress: function() {
 
