@@ -39,7 +39,7 @@
     window.lat = '<%= @gallery.latitude %>';
     window.lng = '<%= @gallery.longitude %>';
   <% end %>
-  <%= javascript_include_tag 'galleries' %>
+  <%= javascript_include_tag 'galleries/map' %>
   <!--GOOGLE　MAP API-->
   <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['MAP_API_KEY'] %>&callback=initMap&libraries=&v=weekly"async></script>
 
