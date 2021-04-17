@@ -5,17 +5,17 @@
 // show
 $form_btn: #f5b09b;
 
-#prf-img {
-  margin: 10px 20px;
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
-}
-
 #user {
 
   .user__wrap {
     display: flex;
+  }
+
+  #prf-img {
+    margin: 10px 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
   }
 
   .user__content {
@@ -32,28 +32,28 @@ $form_btn: #f5b09b;
     }
   }
 
-  .itinerary__new {
+  .travel__new {
     width: 80%;
     margin: 0 auto;
     text-align: center;
-    .form {
-      width: 150px;
-      height: 40px;
-      margin-bottom: 15px;
-    }
-    .date {
+  }
+  .form {
+    width: 150px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  .date {
 
-    }
-    .btn {
-      border-radius: 3px;
-      width: 300px;
-      height: 40px;
-      border-color: $form_btn;
-      background-color: $form_btn;
-    }
+  }
+  .btn {
+    border-radius: 3px;
+    width: 300px;
+    height: 40px;
+    border-color: $form_btn;
+    background-color: $form_btn;
   }
 
-  .itinerary__index {
+  .travel__index {
     width: 400px;
     margin: 0 auto;
     text-align: center;

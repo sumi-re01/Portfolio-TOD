@@ -1,2 +1,0 @@
-class GalleryImage < ApplicationRecord
-end

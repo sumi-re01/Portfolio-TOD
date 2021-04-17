@@ -3,14 +3,16 @@ class UsersController < ApplicationController
   before_action :set_user
 
   def show
-    @itinerary = @user.itineraries.new
-    @itineraries = @user.itineraries.all
+    @travel = @user.travels.new
+    @travels = @user.travels.all
+    # @gallery = Gallery.new
   end
 
   def edit
     if @user == current_user
+      render :edit
     else
-      render to user_path(current_user.id)
+      redirect_to user_path(current_user.id)
     end
   end
 

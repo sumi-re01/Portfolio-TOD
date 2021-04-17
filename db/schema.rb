@@ -10,33 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_12_112341) do
+ActiveRecord::Schema.define(version: 2021_04_14_040916) do
 
   create_table "galleries", force: :cascade do |t|
-    t.integer "itinerary_id"
-    t.boolean "public_status", null: false
+    t.integer "user_id"
+    t.integer "travel_id"
+    t.boolean "public_status", default: true, null: false
     t.string "text"
     t.string "address"
     t.float "latitude"
     t.float "longitude"
+    t.json "images"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["itinerary_id"], name: "index_galleries_on_itinerary_id"
-  end
-
-  create_table "gallery_images", force: :cascade do |t|
-    t.integer "gallery_id", null: false
-    t.string "image_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "itineraries", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "title", null: false
-    t.date "date", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["travel_id"], name: "index_galleries_on_travel_id"
   end
 
   create_table "marks", force: :cascade do |t|
@@ -47,18 +34,26 @@ ActiveRecord::Schema.define(version: 2021_04_12_112341) do
     t.index ["user_id", "gallery_id"], name: "index_marks_on_user_id_and_gallery_id", unique: true
   end
 
-  create_table "plans", force: :cascade do |t|
-    t.integer "itinerary_id", null: false
+  create_table "sns_credentials", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "provider", null: false
+    t.string "uid", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "travel_plans", force: :cascade do |t|
+    t.integer "travel_id", null: false
     t.string "text", null: false
     t.integer "position", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "sns_credentials", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "provider", null: false
-    t.string "uid", null: false
+  create_table "travels", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "title", null: false
+    t.date "date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

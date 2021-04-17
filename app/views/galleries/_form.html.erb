@@ -1,0 +1,32 @@
+<div class="gallery__title">
+  <%#= @travel.title %>
+</div>
+
+<div class="map__box">
+  <p>共有したい位置を検索してください。クリックで位置調整できます。</p>
+  <form onsubmit="return false;">
+    <input type="text" value="東京" id="address">
+    <button type="button" id="map_button">検索</button>
+  </form>
+  <div id="map_display"></div>
+</div>
+
+<%= form_with model:gallery,url: url, local:true do |f| %>
+<%= render 'layouts/errors', model: f.object %>
+  <div class="gallery__form">
+    <%= f.collection_select(:travel_id, travels, :id, :date, {prompt:"共有する旅の日程を選択してください", class:"select__box"}) %>
+  </div>
+  <div class="gallery__form">
+    <%= f.text_area :text, placeholder:"ここに記事を書いてください。", class:"text__form" %>
+  </div>
+  <div class="gallery__form">
+    <%= f.file_field :images, multiple: true %>
+  </div>
+  <%= f.hidden_field :address, vaalue:"" %>
+  <%= f.hidden_field :latitude, value:"null" %>
+  <%= f.hidden_field :longitude, value: "null" %>
+  <%= f.submit "CREATE", class: "form__btn" %>
+<% end %>
+
+<%= javascript_include_tag 'galleries/search_map' %>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['MAP_API_KEY'] %>&callback=initMap&libraries=&v=weekly"async></script>
