@@ -1,5 +1,7 @@
 <div id="gallery">
   <h1 class="page-name">Edit</h1>
 
-  <%= render 'galleries/form', { url:gallery_path(@gallery),  gallery: @gallery, travels: @travels} %>
+  <div class="form__box">
+    <%= render 'galleries/form', { url:gallery_path(@gallery),  gallery: @gallery, travels: @travels} %>
+  </div>
 </div>
