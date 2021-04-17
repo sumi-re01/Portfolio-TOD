@@ -1,6 +1,6 @@
 class GalleriesController < ApplicationController
   before_action :set_gallery, only: [:edit, :update, :show, :destroy]
-  before_action :set_own_travels, only: [:new, :update]
+  before_action :set_own_travels, only: [:new, :update, :edit]
 
 
   def new
@@ -15,20 +15,31 @@ class GalleriesController < ApplicationController
     if gallery.save
       redirect_to gallery_path(gallery)
     else
-      @travel = current_user.travels.all
+      @travels = current_user.travels.all
       render :new
     end
   end
 
   def edit
+    if @gallery.user_id == current_user.id
+      render :edit
+    else
+      redirect_to gallery_path(@gallery)
+    end
   end
 
   def update
+    if @gallery.update(gallery_params)
+      redirect_to gallery_path(@gallery.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
     if @gallery.user_id = current_user.id
       @gallery.destroy
+      redirect_to user_path(current_user)
     else
       redirect_to gallery_path(@gallery)
     end

@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :edit, :update]
 
     post '/galleries/new', to: 'galleries#new', as: 'new_gallery'
-    resources :galleries, only: [:new, :create, :edit, :destroy, :index, :show] do
+    resources :galleries, only: [:new, :create, :edit, :update, :destroy, :index, :show] do
       resources :marks, only: [:create, :destroy]
     end
 

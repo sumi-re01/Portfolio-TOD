@@ -2,21 +2,52 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.text-form {
-  width: 400px;
-  height: 250px;
-}
+// show
+
 .form {
   width: 400px;
   height: 30px;
 }
 
-#map {
-  width: 200px;
-  height: 100px;
+#map_display {
+  width: 400px;
+  height: 200px;
 }
 
 .prf-img {
   width: 20px;
   height: 20px;
+}
+
+// form(new,edit)
+
+.form__box {
+  margin: 0 auto;
+  width: 600px;
+}
+
+.map__box {
+  margin-bottom: 20px;
+  #map_display{
+    width: 100%;
+  }
+}
+
+.gallery__form {
+  margin-bottom: 20px;
+}
+
+.select__box {
+  width: 400px;
+  height: 40px;
+}
+
+.text__form {
+  width: 100%;
+  height: 250px;
+}
+
+.form__btn {
+  margin: 0 auto;
+  width: 400px;
 }
