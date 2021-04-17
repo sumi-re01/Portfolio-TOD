@@ -1,36 +1,5 @@
 <div id="gallery">
   <h1 class="page-name">Share</h1>
 
-  <div class="gallery__title">
-    <%#= @travel.title %>
-  </div>
-
-<form onsubmit="return false;">
-  <input type="text" value="東京" id="address">
-  <button type="button" value="検索" id="map_button">検索</button>
-</form>
-
-  <div class="gallery__new">
-    <%= form_with model:@gallery,url: galleries_path, local:true do |f| %>
-    <%#= render 'layouts/errors', model: f.object %>
-      <%#= f.hidden_field @gallery.travel_id %>
-      <%= f.collection_select(:travel_id, @travels, :id, :date, {prompt:"共有する旅の日程を選択してください", class:"select_box"}) %><br />
-
-      <%= f.text_area :text, placeholder:"body", class:"text-form" %><br />
-
-      <%= f.file_field :images, multiple: true %><br />
-
-      <%= f.hidden_field :address %>
-      <%= f.hidden_field :latitude %>
-      <%= f.hidden_field :longitude %>
-      <%#= f.text_field :address, class:"form" %>
-
-      <%= f.submit "CREATE" %>
-    <% end %>
-  </div>
-
-  <div id="map_display"></div>
-
-<%= javascript_include_tag 'search_map' %>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['MAP_API_KEY'] %>&callback=initMap&libraries=&v=weekly"async></script>
+  <%= render 'galleries/form', { url: galleries_path, gallery: @gallery, travels: @travels} %>
 </div>
