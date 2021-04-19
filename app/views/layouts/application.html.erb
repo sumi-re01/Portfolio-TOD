@@ -12,14 +12,36 @@
 
   <body>
     <div class="container">
+
       <header>
-        <%= render 'layouts/header' %>
+        <%= link_to root_path do %>
+          <div id="logo"></div>
+        <% end %>
+
+        <div id="menu_trigger">▽▽▽</div>
+
+        <div class="user__profile">
+          <% if user_signed_in?%>
+            <%= attachment_image_tag current_user, :profile_image, format: 'jpg', fallback: "no-image.jpg", id: "prf-img" %>
+            <div class="user__name">
+               <p class="name"><%= current_user.name %></p>
+               <%= link_to edit_user_path(current_user.id) do %>
+                 <i class="fas fa-edit"></i>
+               <% end %>
+            </div>
+          <% end %>
+        </div>
       </header>
+
+      <%= render 'layouts/header' %>
+
       <main class="main__field">
         <%= yield %>
       </main>
+
+      <footer>Sumi's Portfolio</footer>
     </div>
 
-    <footer>Sumi's Portfolio</footer>
+    <%= javascript_include_tag 'menu_trigger' %>
   </body>
 </html>

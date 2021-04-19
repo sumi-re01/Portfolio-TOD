@@ -6,30 +6,8 @@
 $form_btn: #f5b09b;
 
 #user {
-
   .user__wrap {
     display: flex;
-  }
-
-  #prf-img {
-    margin: 10px 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
-  }
-
-  .user__content {
-    display: flex;
-    .name {
-      font-size: 25px;
-    }
-
-    .btn {
-    color: black;
-    border: 1px solid black;
-    padding: 5px 15px;
-    margin: 5px;
-    }
   }
 
   .travel__new {
@@ -42,9 +20,7 @@ $form_btn: #f5b09b;
     height: 40px;
     margin-bottom: 15px;
   }
-  .date {
 
-  }
   .btn {
     border-radius: 3px;
     width: 300px;

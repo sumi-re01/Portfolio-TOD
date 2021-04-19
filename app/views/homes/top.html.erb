@@ -2,17 +2,19 @@
   <div class="top__field">
 
     <div class="top__block bl">
-      <h1>Trip On a Day</h1>
+      <div class="block__content">
+        <h1>Trip On a Day</h1>
+        <%= link_to 'ゲストログインはこちら', users_guest_sign_in_path, method: :post, class:"guest__login wh" %>
+      </div>
     </div>
 
     <div class="top__block wh">
-      <p class="text-box">
+      <p class="text__box">
         旅行の1日の日程を管理するアプリケーションサイトです。<br />
         予定を立てても順番通りにいかないことも多いはず。<br />
         Trouverはリストを自由に移動させて気ままな旅ライフをサポートします。<br />
         いろんな人たちと旅の記憶や見どころを共有してみてください！<br />
       </p>
-      <p><%= link_to 'ゲストログインはこちら', users_guest_sign_in_path, method: :post %></p>
    </div>
  </div>
 </div>

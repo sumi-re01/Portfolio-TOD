@@ -1,32 +1,30 @@
-<div class="menu">
-  <%= link_to root_path do %>
-    <div id="logo"></div>
+<nav id="nav__menu">
+
+  <ul class="nav__list">
+  <% if user_signed_in? %>
+    <li class="nav__item">
+      <%= link_to 'MY PAGE', user_path(current_user.id), class:"nav__btn" %>
+    </li>
+    <li class="nav__item">
+      <%= link_to 'GALLERY', galleries_path, class:"nav__btn" %>
+    </li>
+    <li class="nav__item">
+      <%= link_to 'LOG OUT', destroy_user_session_path, method: :delete, class:"nav__btn" %>
+    </li>
+  <% else %>
+    <li class="nav__item">
+      <%= link_to 'TOP', root_path, class:"nav__btn" %>
+    </li>
+    <li class="nav__item">
+      <%= link_to 'GALLERY', galleries_path, class:"nav__btn" %>
+    </li>
+    <li class="nav__item">
+      <%= link_to 'LOG IN',  new_user_session_path, class:"nav__btn" %>
+    </li>
+    <li class="nav__item">
+      <%= link_to 'FIRST VISIT', new_user_registration_path, class:"nav__btn" %>
+    </li>
   <% end %>
+  </ul>
 
-  <div id="menu_trigger">◆◆◆</div>
-
-  <nav class="nav">
-    <ul class="nav__list">
-      <li class="nav__item">
-        <%= link_to 'GALLERY', galleries_path, class:"btn" %>
-      </li>
-      <% if user_signed_in? %>
-        <li class="nav__item">
-          <%= link_to 'MY PAGE', user_path(current_user.id), class:"btn" %>
-        </li>
-        </li>
-        <li class="nav__item">
-          <%= link_to 'LOG OUT', destroy_user_session_path, method: :delete, class:"btn" %>
-        </li>
-      <% else %>
-        <li class="nav__item">
-          <%= link_to 'LOG IN',  new_user_session_path, class:"btn" %>
-        </li>
-        <li class="nav__item">
-          <%= link_to 'FIRST VISIT', new_user_registration_path, class:"btn" %>
-        </li>
-      <% end %>
-    </ul>
-  </nav>
-
-</div>
+</nav>
