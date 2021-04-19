@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def show
     @travel = @user.travels.new
     @travels = @user.travels.all
+    @galleries = Gallery.where(user_id: @user.id).all
     # @gallery = Gallery.new
   end
 

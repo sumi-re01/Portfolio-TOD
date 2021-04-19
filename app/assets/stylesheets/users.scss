@@ -2,41 +2,88 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// show
+// users/show
 $form_btn: #f5b09b;
 
-#user {
-  .user__wrap {
-    display: flex;
-  }
+.user__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
-  .travel__new {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-  }
+.back {
+  margin: 10px;
+  padding: 20px;
+  width: 500px;
+  background-color: #f1f1f1;
+}
+
+// 旅程表作成
+.travel__form {
+  width: 100%;
+  text-align: center;
+
   .form {
-    width: 150px;
-    height: 40px;
+    height: 30px;
+  }
+  .btn {
+    width: 100%;
+    color: white;
+    letter-spacing: 3px;
+    padding: 8px 30px;
+    border-radius: 3px;
+    border: 1px solid $form_btn;
+    background-color: $form_btn;
+
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+// users/travels/index 旅程表一覧
+.travel__index {
+  margin-top: 20px;
+
+  .travel__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 5px 20px;
+    background-color: whitesmoke;
+  }
+}
+
+// 投稿
+.travel__link__btn {
+    width: 100%;
+    color: white;
+    letter-spacing: 3px;
+    padding: 8px 30px;
+    border-radius: 3px;
+    border: 1px solid $form_btn;
+    background-color: $form_btn;
+
+    margin-top: 20px;
+    text-align: center;
+}
+
+// 投稿一覧
+.gallery__index {
+
+  h3 {
     margin-bottom: 15px;
   }
 
-  .btn {
-    border-radius: 3px;
-    width: 300px;
-    height: 40px;
-    border-color: $form_btn;
-    background-color: $form_btn;
-  }
+  .gallery__items {
+    margin-bottom: 10px;
+    padding: 15px;
+    background-color: white;
+    display: flex;
+    align-items: flex-end;
 
-  .travel__index {
-    width: 400px;
-    margin: 0 auto;
-    text-align: center;
-
-    .box {
-      padding: 10px 40px;
-      border-bottom: 2px dashed black;
+    .gallery__introduce {
+      padding-left: 20px;
     }
   }
 }

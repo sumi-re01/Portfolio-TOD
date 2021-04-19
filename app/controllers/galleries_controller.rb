@@ -1,4 +1,5 @@
 class GalleriesController < ApplicationController
+  before_action :authenticate_user!,except: [:show, :index]
   before_action :set_gallery, only: [:edit, :update, :show, :destroy]
   before_action :set_own_travels, only: [:new, :update, :edit]
 
@@ -32,7 +33,8 @@ class GalleriesController < ApplicationController
     if @gallery.update(gallery_params)
       redirect_to gallery_path(@gallery.id)
     else
-      render :edit
+      # render :edit
+      redirect_back(fallback_location: galleries_path)
     end
   end
 
