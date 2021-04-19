@@ -39,7 +39,7 @@
   </div>
 
   <div class="user_info">
-    <%= attachment_image_tag @user, :profile_image, format: 'jpg', fallback: "no-image.jpeg", class: "prf-img" %>
+    <%= attachment_image_tag @user, :profile_image, format: 'jpg', fallback: "no-image.jpg", class: "prf-img" %>
     <span><%=link_to  @user.name, user_path(@user.id) %></span>
   </div>
 
