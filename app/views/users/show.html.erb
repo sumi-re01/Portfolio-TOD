@@ -1,27 +1,53 @@
-<div id="user">
+<div class="main__field">
 
   <h1 class="page-name">MY PAGE</h1>
 
-  <div class="travel__new">
-    <%= form_with model: @travel, url: travels_path, remote:true do |f| %>
-      <div class="formbox">
-        <%= f.text_field :title, placeholder:"Please name your trip", class:"form" %>
-        <%= f.date_field :date, class:"form date" %>
+  <div class="user__wrap">
+    <div class="user__left back">
+      <h3>旅の作成</h3>
+
+      <div class="travel__form">
+        <%= form_with model: @travel, url: travels_path, remote:true do |f| %>
+          <div class="form__box">
+            <%= f.text_field :title, placeholder:"Please name your trip", class:"form" %>
+            <%= f.date_field :date, class:"form date" %>
+          </div>
+          <%= f.submit "予定を考える", class:"btn" %>
+        <% end %>
       </div>
-      <%= f.submit "Create", class:"btn" %>
-    <% end %>
-  </div>
 
-  <div id="travel">
-    <%= render 'travels/index', travels: @travels %>
-  </div>
+      <div id="travel">
+        <%= render 'users/travels/index', travels: @travels %>
+      </div>
 
-  <div class="gallery__index">
-    <%= link_to "旅を共有する", new_gallery_path %>
-    <%#=form_with model: @gallery, url: new_gallery_path, local: true do |f| %>
-      <%#= f.collection_select(:travel_id, @travels, :id, :date, {prompt:"共有する旅の日程を選択してください", class:"select_box"}) %><br />
-      <%#= f.submit "日記を書く" %>
-    <%# end %>
+    </div>
+
+    <div class="user__right back">
+      <h3>旅の共有</h3>
+      <%= link_to new_gallery_path do %>
+        <div class="travel__link__btn">先日の旅を共有する</div>
+      <% end %>
+      <%#=form_with model: @gallery, url: new_gallery_path, local: true do |f| %>
+        <%#= f.collection_select(:travel_id, @travels, :id, :date, {prompt:"共有する旅の日程を選択してください", class:"select_box"}) %><br />
+        <%#= f.submit "日記を書く" %>
+      <%# end %>
+      <div class="gallery__index">
+        <h3>投稿記事一覧</h3>
+        <% @galleries.each do |gallery| %>
+          <div class="gallery__items">
+            <%= link_to gallery_path(gallery) do %>
+              <%= image_tag gallery.images[0].to_s %>
+            <% end %>
+            <div class="gallery__introduce">
+              <%= gallery.public_status ? '公開' : '非公開' %>
+              <p><%= gallery.address %></p>
+              <p><%= gallery.travel.date %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 
 </div>
