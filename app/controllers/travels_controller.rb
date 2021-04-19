@@ -10,7 +10,7 @@ class TravelsController < ApplicationController
     if travel.save
       # travels/index.js.erbへ飛んでusers/showのtravel一覧を取得
       @travels = current_user.travels.all
-      render :index
+      render 'users/travels/index'
     else
       # users/show.html.erbに戻る
       @travels = current_user.travels.all
@@ -23,7 +23,7 @@ class TravelsController < ApplicationController
 
     # index.js.erbへ
     @travels = current_user.travels.all
-    render 'travels/index'
+    render 'users/travels/index'
   end
 
 
