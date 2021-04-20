@@ -63,6 +63,7 @@
  header {
   z-index: 50;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 100px;
   background-color: $head-color;
@@ -77,12 +78,13 @@
 
   #menu_trigger {
     line-height: 100px;
-    cursor: cell;
+    cursor: pointer;
    }
 
   .user__profile {
-   width: 200px;
-   display: contents;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
 
     #prf-img {
       margin: 10px 20px;
@@ -104,7 +106,7 @@
    width: 100%;
    position: absolute;
    background-color: $head-color;
-   opacity: 0.7;
+   opacity: 0.9;
    text-align: center;
  }
 
