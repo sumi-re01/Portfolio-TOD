@@ -1,7 +1,10 @@
 <div class="main__field">
   <h1 class="page-name">Edit</h1>
+  <div class="gallery__title">
+    <%= gallery.travel.title %>
+  </div>
 
-  <div class="form__box">
+  <div class="gallery__form__box">
     <%= render 'galleries/form', { url:gallery_path(@gallery),  gallery: @gallery, travels: @travels} %>
   </div>
 </div>

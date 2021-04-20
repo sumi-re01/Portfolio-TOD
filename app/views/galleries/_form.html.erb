@@ -1,11 +1,7 @@
-<div class="gallery__title">
-  <%#= @travel.title %>
-</div>
-
 <div class="map__box">
   <p>共有したい位置を検索してください。クリックで位置調整できます。</p>
   <form onsubmit="return false;">
-    <input type="text" value="東京" id="address">
+    <input type="text" value="" id="address">
     <button type="button" id="map_button">検索</button>
   </form>
   <div id="map_display"></div>
@@ -22,7 +18,7 @@
   <div class="gallery__form">
     <%= f.file_field :images, multiple: true %>
   </div>
-  <%= f.hidden_field :address, vaalue:"" %>
+  <%= f.hidden_field :address, value:"" %>
   <%= f.hidden_field :latitude, value:"null" %>
   <%= f.hidden_field :longitude, value: "null" %>
   <%= f.submit "CREATE", class: "form__btn" %>

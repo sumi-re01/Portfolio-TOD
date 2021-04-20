@@ -19,7 +19,7 @@
  $link-color: black;
  $background-color: #f58f8f;
  $head-color: #8eb1b0;
- $form_btn: #67c7c4;
+ $form_btn: #dad9de;
 
  * {
   margin: 0;
@@ -40,24 +40,24 @@
 
  // エラーメッセージでのフォーム崩れ防止
  .field_with_errors {
-  display: contents;
+   display: contents;
  }
 
  // エラーメッセージ
  .alert {
-	text-align: center;
-}
-.alert-info {
-    background-color: #bde9ff;
-    border-color: #bde9ff;
-    color: #4c6977;
-}
+	  text-align: center;
+ }
+ .alert-info {
+   background-color: #bde9ff;
+   border-color: #bde9ff;
+   color: #4c6977;
+ }
 
-.alert-danger {
-    background-color: #f3c0c0;
-    border-color: #f3c0c0;
-    color: #3e3a3a;
-}
+ .alert-danger {
+   background-color: #f3c0c0;
+   border-color: #f3c0c0;
+   color: #3e3a3a;
+ }
 
  // header
  header {
@@ -132,14 +132,14 @@
 
  // メイン画面
 .main__field {
-  margin: 0 auto;
+  margin: 30px auto;
   width: 85%;
 }
 
 // ページ名
 .page-name {
   font-weight: 400;
-  padding: 40px 40px 0 40px;
+  padding: 0 40px;
 }
 
 // フォームスタイル(Log_in sign_up)
@@ -164,6 +164,7 @@
    width: 100%;
    height: 40px;
    margin: 20px auto;
+   cursor: pointer;
    color: white;
    font-size: 20px;
    background-color: $form_btn;

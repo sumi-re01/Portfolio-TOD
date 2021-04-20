@@ -24,16 +24,18 @@ $form_btn: #f5b09b;
   text-align: center;
 
   .form {
-    height: 30px;
+    width: 45%;
+    height: 40px;
   }
   .btn {
-    width: 100%;
+    width: 85%;
     color: white;
     letter-spacing: 3px;
     padding: 8px 30px;
     border-radius: 3px;
     border: 1px solid $form_btn;
     background-color: $form_btn;
+    margin-top: 10px;
 
     font-size: 15px;
     font-weight: bold;
@@ -56,7 +58,7 @@ $form_btn: #f5b09b;
 
 // 投稿
 .travel__link__btn {
-    width: 100%;
+    width: 85%;
     color: white;
     letter-spacing: 3px;
     padding: 8px 30px;
