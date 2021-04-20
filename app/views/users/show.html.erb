@@ -8,6 +8,7 @@
 
       <div class="travel__form">
         <%= form_with model: @travel, url: travels_path, remote:true do |f| %>
+        <%= render 'layouts/errors', model: f.object %>
           <div class="form__box">
             <%= f.text_field :title, placeholder:"Please name your trip", class:"form" %>
             <%= f.date_field :date, class:"form date" %>
@@ -17,7 +18,7 @@
       </div>
 
       <div id="travel">
-        <%= render 'users/travels/index', travels: @travels %>
+        <%= render 'travels/index', travels: @travels %>
       </div>
 
     </div>
@@ -33,6 +34,7 @@
       <%# end %>
       <div class="gallery__index">
         <h3>投稿記事一覧</h3>
+
         <% @galleries.each do |gallery| %>
           <div class="gallery__items">
             <%= link_to gallery_path(gallery) do %>

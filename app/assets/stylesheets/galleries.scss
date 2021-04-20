@@ -2,52 +2,86 @@
 // // They will automatically be included in application.css.
 // // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// // show
-
-// .form {
-//   width: 400px;
-//   height: 30px;
-// }
-//
-#map_display {
-  width: 400px;
-  height: 200px;
+// show
+.gallery__wrap {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-// .prf-img {
-//   width: 20px;
-//   height: 20px;
-// }
+.gallery__text {
+  width: 700px;
+  padding: 30px;
+  background-color: #f1f1f1;
 
-// // form(new,edit)
+  p {
+    white-space: pre-wrap;
+    background-color: white;
+  }
+  .prf-img {
+    width: 20px;
+    height: 20px;
+  }
 
-// .form__box {
-//   margin: 0 auto;
-//   width: 600px;
-// }
+  &__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 
-// .map__box {
-//   margin-bottom: 20px;
-//   #map_display{
-//     width: 100%;
-//   }
-// }
+    .gallery__images {
+      height: 200px;
+      width: 300px;
+    }
+    #map_display {
+      width: 300px;
+      height: 200px;
+    }
+  }
+}
 
-// .gallery__form {
-//   margin-bottom: 20px;
-// }
 
-// .select__box {
-//   width: 400px;
-//   height: 40px;
-// }
+.plan__box {
+  margin: 20px;
+  text-align: center;
 
-// .text__form {
-//   width: 100%;
-//   height: 250px;
-// }
+  .plan__item {
+    width: 300px;
+    padding: 0 30px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #d3b4af;
+  }
+}
 
-// .form__btn {
-//   margin: 0 auto;
-//   width: 400px;
-// }
+// form(new,edit)
+
+.gallery__form__box {
+  margin: 0 auto;
+  width: 600px;
+
+  .map__box {
+    margin-bottom: 20px;
+  }
+  #map_display {
+    width: 100%;
+    height: 200px;
+  }
+
+  .gallery__form {
+    margin-bottom: 20px;
+  }
+  .select__box {
+    width: 400px;
+    height: 40px;
+  }
+  .text__form {
+    width: 100%;
+    height: 250px;
+  }
+  .form__btn {
+    margin: 0 auto;
+    width: 400px;
+  }
+}
