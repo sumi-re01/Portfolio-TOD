@@ -9,7 +9,9 @@
         <p><%= travel_plan.text %></p>
       </div>
       <div class="btn flex-center">
-        <%=link_to '✖', travel_travel_plan_path(travel_plan.travel, travel_plan), method: :delete, remote:true %>
+        <%=link_to travel_travel_plan_path(travel_plan.travel, travel_plan), method: :delete, remote:true do %>
+          <i class="fas fa-times"></i>
+        <% end %>
       </div>
     </div>
   <% end %>
