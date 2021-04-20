@@ -4,7 +4,6 @@
 $(function() {
   const el = document.getElementById("sortable_list");
   if (el != null) {
-    console.log("1");
     const sortable = Sortable.create(el, {
        handle: "#bar",
        delay: 150,
