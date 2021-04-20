@@ -11,10 +11,10 @@ class GalleriesController < ApplicationController
   end
 
   def create
-    gallery = Gallery.new(gallery_params)
-    gallery.user_id = current_user.id
-    if gallery.save
-      redirect_to gallery_path(gallery)
+    @gallery = Gallery.new(gallery_params)
+    @gallery.user_id = current_user.id
+    if @gallery.save
+      redirect_to gallery_path(@gallery)
     else
       @travels = current_user.travels.all
       render :new
@@ -33,8 +33,7 @@ class GalleriesController < ApplicationController
     if @gallery.update(gallery_params)
       redirect_to gallery_path(@gallery.id)
     else
-      # render :edit
-      redirect_back(fallback_location: galleries_path)
+      render :edit
     end
   end
 

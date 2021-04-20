@@ -16,8 +16,12 @@
   background-color: #f1f1f1;
 
   p {
+    line-height: 2em;
+    background-image: linear-gradient(transparent 0, transparent 97%, #ddd 100%);
+    background-size: 100% 2em;
     white-space: pre-wrap;
     background-color: white;
+    padding: 0 1.3em;
   }
   .prf-img {
     width: 20px;

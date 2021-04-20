@@ -8,7 +8,7 @@
 
       <div class="travel__form">
         <%= form_with model: @travel, url: travels_path, remote:true do |f| %>
-        <%= render 'layouts/errors', model: f.object %>
+        <div class="error-messages"></div>
           <div class="form__box">
             <%= f.text_field :title, placeholder:"Please name your trip", class:"form" %>
             <%= f.date_field :date, class:"form date" %>
@@ -43,7 +43,7 @@
             <div class="gallery__introduce">
               <%= gallery.public_status ? '公開' : '非公開' %>
               <p><%= gallery.address %></p>
-              <p><%= gallery.travel.date %></p>
+              <p><%= l gallery.travel.date %></p>
             </div>
           </div>
         <% end %>
