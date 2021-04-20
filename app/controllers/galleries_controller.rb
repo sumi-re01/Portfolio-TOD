@@ -48,6 +48,7 @@ class GalleriesController < ApplicationController
   end
 
   def show
+    @travel_plans = @gallery.travel.travel_plans.all
     @user = @gallery.travel.user
   end
 

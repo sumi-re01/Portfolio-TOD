@@ -1,47 +1,55 @@
 <div class="main__field">
-  <div class="gallery__wrap"></div>
+  <div class="gallery__wrap">
 
-  <div class="travel__box">
-    <% @gallery.travel.travel_plans.each do |plan|%>
-      <div class="travel__item">
-        <%= plan.text %>
+    <div class="gallery__text">
+      <h2><%= @gallery.travel.title %></h2>
+      <div class="book-mark" id="mark_<%= @gallery.id %>">
+        <%= render partial: 'marks/mark', locals: {gallery: @gallery}%>
       </div>
-    <% end %>
-  </div>
+      <p class="gallery__body">
+        <%= @gallery.text %><br />
+        <%= l @gallery.created_at, format: :short %>
+      </p>
 
-  <div class="gallery__images">
-    <% @gallery.images.each do |image| %>
-      <%= image_tag image.to_s %>
-    <% end %>
-  </div>
+      <div class="user_info">
+        by <%= attachment_image_tag @user, :profile_image, format: 'jpg', fallback: "no-image.jpg", class: "prf-img" %>
+        <span><%=link_to  @user.name, user_path(@user.id) %></span>
+      </div>
 
-  <div class="gallery__text">
-    <h2><%= @gallery.travel.title %></h2>
+      <% if user_signed_in? && @gallery.travel.user_id == current_user.id %>
+        <%= link_to "EDIT", edit_gallery_path(@gallery.id) %>
+        <%= link_to "DELETE", gallery_path(@gallery.id), method: :delete, data: {comfirm: "記事を削除しますか？"} %>
+      <% end %>
 
-    <div class="book-mark" id="mark_<%= @gallery.id %>">
-      <%= render partial: 'marks/mark', locals: {gallery: @gallery}%>
+      <div class="gallery__text__bottom">
+        <div class="gallery__images">
+          <div id="theTarget">
+            <% @gallery.images.each do |image| %>
+              <div><%= image_tag image.to_s %></div>
+            <% end %>
+          </div>
+        </div>
+        <div class="gallery__region">
+          at <%= @gallery.address %>
+          <div id='map_display'></div>
+        </div>
+      </div>
     </div>
 
-    <p>
-      <%= @gallery.text %><br />
-      <%= l @gallery.created_at, format: :short %>
-    </p>
+    <div class="plan__box">
+      <h3>順路</h3>
+      <% @travel_plans.each do |travel_plan| %>
+        <div class="plan__item"><%= travel_plan.text %></div>
+        <i class="fas fa-chevron-down"></i>
+      <% end %>
+      <div class="plan__item">〆</div>
+    </div>
 
-    <% if user_signed_in? && @gallery.travel.user_id == current_user.id %>
-      <%= link_to "EDIT", edit_gallery_path(@gallery.id) %>
-      <%= link_to "DELETE", gallery_path(@gallery.id), method: :delete, data: {comfirm: "記事を削除しますか？"} %>
-    <% end %>
   </div>
 
-  <div class="gallery__region">
-    at <%= @gallery.address %>
-    <div id='map_display'></div>
-  </div>
-
-  <div class="user_info">
-    <%= attachment_image_tag @user, :profile_image, format: 'jpg', fallback: "no-image.jpg", class: "prf-img" %>
-    <span><%=link_to  @user.name, user_path(@user.id) %></span>
-  </div>
+  <!--スライドショー-->
+  <%= javascript_include_tag 'galleries/skippr.min.js' %>
+  <%= javascript_include_tag 'galleries/skipper_image.js' %>
 
   <!--緯度経度をgalleries.jsに渡す-->
   <%= javascript_tag do %>
