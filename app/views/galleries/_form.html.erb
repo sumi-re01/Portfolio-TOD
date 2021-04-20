@@ -1,5 +1,7 @@
+<%= render 'layouts/errors', model: gallery %>
+
 <div class="map__box">
-  <p>共有したい位置を検索してください。クリックで位置調整できます。</p>
+  <p>共有したい場所を検索してください。クリックで位置調整できます。</p>
   <form onsubmit="return false;">
     <input type="text" value="" id="address">
     <button type="button" id="map_button">検索</button>
@@ -7,11 +9,12 @@
   <div id="map_display"></div>
 </div>
 
-<%= form_with model:gallery,url: url, local:true do |f| %>
-<%= render 'layouts/errors', model: f.object %>
+<%= form_with model:gallery ,url: url, local:true do |f| %>
   <div class="gallery__form">
     <%= f.collection_select(:travel_id, travels, :id, :date, {prompt:"共有する旅の日程を選択してください", class:"select__box"}) %>
   </div>
+
+
   <div class="gallery__form">
     <%= f.text_area :text, placeholder:"ここに記事を書いてください。", class:"text__form" %>
   </div>

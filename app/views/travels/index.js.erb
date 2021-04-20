@@ -1,4 +1,3 @@
 $("<%= @selector %>").html("<%= j(render "#{@url}" , {travel: @travel, travels: @travels}) %>");
-<!--非同期先フォームにエラーメッセージを表示させたい-->
-<!--$(".travel__form").html("<%#= j(render "layouts/errors", {travel: @travel, travels: @travels}) %>");-->
 $(".form").val('');
+$(".error-messages").html("<%= j(render 'layouts/errors', {model: @travel, model: @travel_plan} ) %>");
