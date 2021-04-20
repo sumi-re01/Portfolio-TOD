@@ -1,7 +1,8 @@
 <div class="main__field">
   <h1 class="page-name"><%= @travel.date %></h1>
+  <h1 class="page-name"><%= @travel.title %></h1>
 
-  <div class="contents">
+  <div class="travel__wrap">
     <div class="travel__form">
       <%= form_with model:@travel_plan, url: travel_travel_plans_path(@travel) , method: :post do |f| %>
         <%= render 'layouts/errors', model: f.object %>
@@ -10,12 +11,8 @@
       <% end %>
     </div>
 
-    <div class="travel__plans">
-      <h2><%= @travel.title %> <i class="far fa-edit"></i></h2>
-
-      <div id="plans_index">
-        <%= render 'travels/plans', travel: @travel %>
-      </div>
+    <div id="plans_index">
+      <%= render 'travels/plans', travel: @travel %>
     </div>
   </div>
 

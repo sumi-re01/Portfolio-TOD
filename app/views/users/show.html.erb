@@ -34,6 +34,7 @@
       <%# end %>
       <div class="gallery__index">
         <h3>投稿記事一覧</h3>
+
         <% @galleries.each do |gallery| %>
           <div class="gallery__items">
             <%= link_to gallery_path(gallery) do %>
