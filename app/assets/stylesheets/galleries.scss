@@ -2,22 +2,58 @@
 // // They will automatically be included in application.css.
 // // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// // show
-
-// .form {
-//   width: 400px;
-//   height: 30px;
-// }
-//
-#map_display {
-  width: 400px;
-  height: 200px;
+// show
+.gallery__wrap {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-// .prf-img {
-//   width: 20px;
-//   height: 20px;
-// }
+.gallery__text {
+  width: 700px;
+  padding: 30px;
+  background-color: #f1f1f1;
+
+  p {
+    white-space: pre-wrap;
+    background-color: white;
+  }
+  .prf-img {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    .gallery__images {
+      height: 200px;
+      width: 300px;
+    }
+    #map_display {
+      width: 300px;
+      height: 200px;
+    }
+  }
+}
+
+
+.plan__box {
+  margin: 20px;
+  text-align: center;
+
+  .plan__item {
+    width: 300px;
+    padding: 0 30px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #d3b4af;
+  }
+}
 
 // // form(new,edit)
 

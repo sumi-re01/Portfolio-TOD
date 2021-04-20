@@ -4,16 +4,20 @@ class TravelsController < ApplicationController
 # user/show内
 
   def create
-    travel = Travel.new(travel_params)
-    travel.user_id = current_user.id
+    @travel = Travel.new(travel_params)
+    @travel.user_id = current_user.id
 
-    if travel.save
-      # travels/index.js.erbへ飛んでusers/showのtravel一覧を取得
+    if @travel.save
+
       @travels = current_user.travels.all
-      render 'users/travels/index'
+      @selector = "#travel"
+      @url = "travels/index"
+      # travels/index.js.erbでindex.htmlを更新
+      render 'travels/index'
     else
       # users/show.html.erbに戻る
       @travels = current_user.travels.all
+      @galleries = Gallery.where(user_id: current_user.id).all
       render 'users/show'
     end
   end
@@ -21,9 +25,12 @@ class TravelsController < ApplicationController
   def destroy
     @travel.destroy
 
-    # index.js.erbへ
+    # 以下createと同じ
     @travels = current_user.travels.all
-    render 'users/travels/index'
+    @selector = "#travel"
+    @url = "travels/index"
+    # travels/index.js.erbでindex.htmlを更新
+    render 'travels/index'
   end
 
 
