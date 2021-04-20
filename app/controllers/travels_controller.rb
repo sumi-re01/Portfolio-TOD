@@ -7,19 +7,13 @@ class TravelsController < ApplicationController
     @travel = Travel.new(travel_params)
     @travel.user_id = current_user.id
 
-    if @travel.save
+    @travel.save
 
-      @travels = current_user.travels.all
-      @selector = "#travel"
-      @url = "travels/index"
-      # travels/index.js.erbでindex.htmlを更新
-      render 'travels/index'
-    else
-      # users/show.html.erbに戻る
-      @travels = current_user.travels.all
-      @galleries = Gallery.where(user_id: current_user.id).all
-      render 'users/show'
-    end
+    @travels = current_user.travels.all
+    @selector = "#travel"
+    @url = "travels/index"
+    # travels/index.js.erbでindex.htmlを更新
+    render 'travels/index'
   end
 
   def destroy

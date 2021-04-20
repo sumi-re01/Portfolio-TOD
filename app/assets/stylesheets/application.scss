@@ -19,7 +19,9 @@
  $link-color: black;
  $background-color: #f58f8f;
  $head-color: #8eb1b0;
+ $nav-hover: #89b9b8;
  $form_btn: #dad9de;
+
 
  * {
   margin: 0;
@@ -126,7 +128,7 @@
    transition: all 0.3s;
 
    &:hover {
-    background-color: white;
+    background-color: $nav-hover;
     letter-spacing: 3px;
    }
  }
