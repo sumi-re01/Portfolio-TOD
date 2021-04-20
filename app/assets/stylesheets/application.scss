@@ -119,6 +119,14 @@
 
  .nav__item {
    margin-bottom: 15px;
+   height: 40px;
+   line-height: 40px;
+   transition: all 0.3s;
+
+   &:hover {
+    background-color: white;
+    letter-spacing: 3px;
+   }
  }
 
  // Footer
