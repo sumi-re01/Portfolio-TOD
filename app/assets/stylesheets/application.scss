@@ -44,13 +44,13 @@
  .field_with_errors {
    display: contents;
  }
- 
+
  // エラーメッセージ
  #error_box {
   width: 100%;
   padding: 10px 30px 0;
  }
- 
+
  #error_item {
   padding: 5px;
   list-style: none;
@@ -82,10 +82,10 @@
   align-items: center;
   height: 100px;
   background-color: $head-color;
-  
+
   .logo_menu {
     position: relative;
-    
+
     #logo {
       width: 100px;
       height: 100px;
@@ -162,8 +162,8 @@
 
  // メイン画面
 .main__field {
-  margin: 30px auto;
-  width: 85%;
+  padding: 50px 0;
+  background-color: #f7f5f2;
 }
 
 // ページ名
@@ -201,4 +201,16 @@
    border-radius: 3px;
    padding: 5px 10px;
    border: 1px solid white;
+ }
+
+ // pagenation
+ .pagination {
+  text-align: center;
+
+  span {
+    padding: 5px;
+    background-color: #dad9de;
+    border-radius: 10%;
+    margin: 3px;
+  }
  }

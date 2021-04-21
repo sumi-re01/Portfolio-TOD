@@ -4,8 +4,8 @@ class UsersController < ApplicationController
 
   def show
     @travel = @user.travels.new
-    @travels = @user.travels.all
-    @galleries = Gallery.where(user_id: @user.id).all
+    @travels = @user.travels.all.page(params[:page])
+    @galleries = Gallery.where(user_id: @user.id).all.page(params[:page]).per(2)
     # @gallery = Gallery.new
   end
 

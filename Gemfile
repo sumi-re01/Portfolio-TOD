@@ -101,6 +101,9 @@ gem 'rails-i18n'
 # font-awesome
 gem 'font-awesome-sass'
 
+# pagenate
+gem 'kaminari'
+
 # デプロイ関係
 gem 'dotenv-rails'
 group :production do

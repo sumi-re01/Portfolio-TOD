@@ -4,7 +4,10 @@
     <div class="top__block bl">
       <div class="block__content">
         <h1>Trip On a Day</h1>
-        <%= link_to 'ゲストログインはこちら', users_guest_sign_in_path, method: :post, class:"guest__login wh" %>
+        <% if user_signed_in? %>
+        <% else %>
+          <%= link_to 'ゲストログインはこちら', users_guest_sign_in_path, method: :post, class:"guest__login wh" %>
+        <% end %>
       </div>
     </div>
 
