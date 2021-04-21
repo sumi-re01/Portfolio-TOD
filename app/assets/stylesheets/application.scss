@@ -202,3 +202,15 @@
    padding: 5px 10px;
    border: 1px solid white;
  }
+
+ // pagenation
+ .pagination {
+  text-align: center;
+
+  span {
+    padding: 5px;
+    background-color: #dad9de;
+    border-radius: 10%;
+    margin: 3px;
+  }
+ }

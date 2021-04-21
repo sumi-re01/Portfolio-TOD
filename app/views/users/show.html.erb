@@ -19,6 +19,7 @@
 
       <div id="travel">
         <%= render 'travels/index', travels: @travels %>
+        <%= paginate @travels %>
       </div>
 
     </div>
@@ -46,6 +47,7 @@
             </div>
           </div>
         <% end %>
+        <%= paginate @galleries %>
       </div>
 
     </div>
