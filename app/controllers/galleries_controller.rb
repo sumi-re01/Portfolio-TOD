@@ -52,7 +52,7 @@ class GalleriesController < ApplicationController
   end
 
   def index
-    @galleries = Gallery.all
+    @galleries = Gallery.where(public_status: true).all
   end
 
 

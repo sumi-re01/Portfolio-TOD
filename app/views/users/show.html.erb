@@ -34,20 +34,20 @@
       <%# end %>
       <div class="gallery__index">
         <h3>投稿記事一覧</h3>
-
         <% @galleries.each do |gallery| %>
           <div class="gallery__items">
             <%= link_to gallery_path(gallery) do %>
               <%= image_tag gallery.images[0].to_s %>
             <% end %>
             <div class="gallery__introduce">
-              <%= gallery.public_status ? '公開' : '非公開' %>
+              <%= gallery.public_status ? '公開中' : '非公開' %>
               <p><%= gallery.address %></p>
               <p><%= l gallery.travel.date %></p>
             </div>
           </div>
         <% end %>
       </div>
+
     </div>
 
   </div>

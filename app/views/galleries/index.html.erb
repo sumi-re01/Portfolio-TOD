@@ -1,16 +1,10 @@
 <div class="main__field">
-  <div class="galleries__index">
+  <div class="galleries">
     <h1 class="page-name">GALLERY</h1>
 
-    <% @galleries.each do |gallery| %>
-      <div class="galleries__box">
-        <%= link_to gallery_path(gallery) do %>
-          <%= image_tag gallery.images[0].to_s %>
-        <% end %>
-        <%= gallery.travel.title %>
-        <%= gallery.address %>
-      </div>
-    <% end %>
+    <div class="galleries__index">
+      <%= render 'galleries/index', galleries: @galleries %>
+    </div>
 
   </div>
 </div>
