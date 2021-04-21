@@ -14,11 +14,12 @@
     <div class="container">
 
       <header>
-        <%= link_to root_path do %>
-          <div id="logo"></div>
-        <% end %>
-
-        <div id="menu_trigger">▽▽▽</div>
+        <div class="logo_menu">
+          <%= link_to root_path do %>
+            <div id="logo"></div>
+          <% end %>
+          <div id="menu_trigger">▽▽▽</div>
+        </div>
 
         <div class="user__profile">
           <% if user_signed_in?%>
