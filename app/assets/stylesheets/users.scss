@@ -58,23 +58,26 @@ $form_btn: #f5b09b;
 
 // 投稿
 .travel__link__btn {
-    width: 85%;
-    color: white;
-    letter-spacing: 3px;
-    padding: 8px 30px;
-    border-radius: 3px;
-    border: 1px solid $form_btn;
-    background-color: $form_btn;
+  width: 85%;
+  color: white;
+  letter-spacing: 3px;
+  padding: 8px 30px;
+  border-radius: 3px;
+  border: 1px solid $form_btn;
+  background-color: $form_btn;
 
-    margin-top: 20px;
-    text-align: center;
+  margin: 20px auto;
+  text-align: center;
 }
 
 // 投稿一覧
 .gallery__index {
-
-  h3 {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
+  .galleries__index {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .gallery__items {
@@ -87,5 +90,19 @@ $form_btn: #f5b09b;
     .gallery__introduce {
       padding-left: 20px;
     }
+  }
+}
+
+// users/edit
+.user__form__box {
+  margin: 20px auto;
+  width: 400px;
+
+  .user__form {
+    margin-bottom: 20px;
+  }
+  .form {
+    width: 400px;
+    height: 40px;
   }
 }

@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user
+  before_action :set_user, only: [:show, :edit, :update]
 
   def show
     @travel = @user.travels.new
-    @travels = @user.travels.all
-    @galleries = Gallery.where(user_id: @user.id).all
+    @travels = @user.travels.all.page(params[:page])
+    @galleries = Gallery.where(user_id: @user.id).all.page(params[:page]).per(2)
     # @gallery = Gallery.new
   end
 
@@ -18,12 +18,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
-    if user == current_user
-      user.update(user_params)
+    @user = User.find(params[:id])
+    if @user.update(user_params)
       redirect_to user_path(user.id)
     else
-      redirect_to user_path(current_user.id)
+      render :edit
     end
   end
 

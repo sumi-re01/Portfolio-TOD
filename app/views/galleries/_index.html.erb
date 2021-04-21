@@ -1,0 +1,11 @@
+<% galleries.each do |gallery| %>
+  <div class="gallery__items">
+    <%= link_to gallery_path(gallery) do %>
+      <%= image_tag gallery.images[0].to_s %>
+    <% end %>
+    <div class="gallery__introduce">
+      <p><%= gallery.address %></p>
+      <p><%= l gallery.travel.date %></p>
+    </div>
+  </div>
+<% end %>

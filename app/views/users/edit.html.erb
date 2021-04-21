@@ -1,0 +1,17 @@
+<div class="main__field">
+  <h1 class="page-name"> PROFILE EDIT</h1>
+
+  <div class="user__form__box">
+    <%= form_with model:@user, local:true do |f| %>
+    <%= render 'layouts/errors', model: f.object %>
+      <div class="user__form">
+        <%= f.attachment_field :profile_image %>
+      </div>
+      <div class="user__form">
+        <%= f.text_field :name, class:"form" %>
+      </div>
+      <%= f.submit "UPDATE", class: "form__btn"%>
+    <% end %>
+  </div>
+
+</div>
