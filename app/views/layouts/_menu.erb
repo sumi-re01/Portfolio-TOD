@@ -9,6 +9,9 @@
       <%= link_to 'GALLERY', galleries_path, class:"nav__btn" %>
     </li>
     <li class="nav__item">
+      <%= link_to 'BOOKMARK', marks_galleries_path, class:"nav__btn" %>
+    </li>
+    <li class="nav__item">
       <%= link_to 'LOG OUT', destroy_user_session_path, method: :delete, class:"nav__btn" %>
     </li>
   <% else %>
