@@ -85,6 +85,7 @@ gem 'refile-mini_magick'
 
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
+gem 'fog-aws'
 
 #SNS認証(google,twitter)
 gem 'omniauth', '1.9.1'
