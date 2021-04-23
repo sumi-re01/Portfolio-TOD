@@ -6,7 +6,7 @@ class GalleriesController < ApplicationController
 
   def new
     # 紐付けたいtravelを取得
-    # @travel = Travel.where(id: params[:gallery][:travel_id])
+    # @travel = Travel.where(id: params[:gallery][:travel_id]).all
     @gallery = Gallery.new
   end
 
@@ -44,6 +44,12 @@ class GalleriesController < ApplicationController
     else
       redirect_to gallery_path(@gallery)
     end
+  end
+
+  def marks
+    user_marks = Mark.where(user_id: current_user).all
+    @marks = user_marks.pluck(:gallery_id)
+    @mark_galleries = Gallery.where(id: @marks).all.page(params[:page]).per(9)
   end
 
   def show

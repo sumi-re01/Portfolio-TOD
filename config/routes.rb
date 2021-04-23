@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
     post '/galleries/new', to: 'galleries#new', as: 'new_gallery'
     resources :galleries, only: [:new, :create, :edit, :update, :destroy, :index, :show] do
+      get :marks, on: :collection
       resources :marks, only: [:create, :destroy]
     end
 
