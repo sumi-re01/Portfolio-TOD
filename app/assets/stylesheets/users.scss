@@ -106,3 +106,12 @@ $form_btn: #f5b09b;
     height: 40px;
   }
 }
+
+@media screen and (max-width:768px) {
+
+  .gallery__index {
+    .gallery__items {
+      display: block;
+    }
+  }
+}
