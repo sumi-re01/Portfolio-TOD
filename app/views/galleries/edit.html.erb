@@ -2,27 +2,23 @@
   <h1 class="page-name">GALLERY EDIT</h1>
 
   <div class="gallery__form__box">
-    <%#= render 'galleries/form', { url:gallery_path(@gallery),  gallery: @gallery, travels: @travels} %>
-
     <%= render 'layouts/errors', model: @gallery %>
 
     <h3 class="gallery__title">
-      <%= @gallery.travel.title %>
+      旅行名「　<%= @gallery.travel.title %>　」<br />
+      旅行日　<%= l @gallery.travel.date, format: :long %>
     </h3>
 
     <div class="map__box">
-      <p>共有したい場所を検索してください。クリックで位置調整できます。</p>
+      <p>共有したい場所を入力してください。クリックで位置調整できます。</p>
       <form onsubmit="return false;">
-        <input type="text" value='<%= @gallery.address %>' id="address">
-        <button type="button" id="map_button">検索</button>
+        <input type="text" value='<%= @gallery.address %>' id="address" class="form" placeholder="場所の名前を入力してください">
+        <button type="button" id="map_button" class="form__btn">SEARCH</button>
       </form>
       <div id="map_display"></div>
     </div>
 
     <%= form_with model:@gallery ,url: gallery_path(@gallery), local:true do |f| %>
-      <div class="gallery__form">
-        <%= f.collection_select(:travel_id, @travels, :id, :date, {prompt:"共有する旅の日程を選択してください", class:"select__box"}) %>
-      </div>
 
       <div class="gallery__form">
         <%= f.text_area :text, placeholder:"ここに記事を書いてください。", class:"text__form" %>
@@ -31,7 +27,7 @@
         <%= f.file_field :images, multiple: true %>
       </div>
       <div class="gallery__form">
-        <%= f.select :public_status, [['非公開',false],['公開',true]] %>
+        <%= f.select :public_status, [['非公開',false],['公開',true]],{}, {class: "select__box"} %>
       </div>
       <%= f.hidden_field :address, value:"" %>
       <%= f.hidden_field :latitude, value:"null" %>

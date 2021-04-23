@@ -62,11 +62,28 @@
 // form(new,edit)
 
 .gallery__form__box {
-  margin: 0 auto;
+  margin: 20px auto;
   width: 600px;
+
+  .gallery__title {
+    margin: 20px 0;
+  }
 
   .map__box {
     margin-bottom: 20px;
+    .form {
+      height: 30px;
+      width: 300px;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 13px;
+    }
+    .form__btn {
+      width: 80px;
+      height: 30px;
+      padding: 0;
+      font-size: 15px;
+    }
   }
   #map_display {
     width: 100%;
@@ -77,10 +94,13 @@
     margin-bottom: 20px;
   }
   .select__box {
+    font-size: 13px;
     width: 400px;
     height: 40px;
   }
   .text__form {
+    padding: 10px;
+    font-size: 15px;
     width: 100%;
     height: 250px;
   }
@@ -107,4 +127,21 @@
   .gallery__introduce {
     padding-left: 20px;
   }
+}
+
+
+
+@media screen and (max-width:768px) {
+
+  .gallery__form__box {
+    width: 90%;
+
+    .form {
+      width: 90%;
+    }
+    .select__box {
+      width: 70%;
+    }
+  }
+
 }
