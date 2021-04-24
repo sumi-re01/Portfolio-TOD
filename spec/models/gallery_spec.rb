@@ -1,8 +1,5 @@
 require 'rails_helper'
 
 RSpec.describe Gallery, type: :model do
-  describe '投稿のバリデーション' do
-    let(:gallery) { FactoryBot.build(:gallery_test) }
-    
-  end
+  pending "add some examples to (or delete) #{__FILE__}"
 end
