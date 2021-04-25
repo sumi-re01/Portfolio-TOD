@@ -1,43 +1,32 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe 'ユーザーのバリデーション' do
-    let(:user) { FactoryBot.build(:user_test) }
-
-    it 'バリデーションが有効なこと' do
+  it "is valid with a name, email, and password" do
+    user = User.new(
+      name: "たなか",
+      email: "tester@example.com",
+      password: "testpass"
+      )
       expect(user).to be_valid
-    end
-
-    context '名前のバリデーション' do
-      it '名前が空欄でないこと' do
-        user.name = ''
-        expect(user).to be_invalid
-      end
-    end
-    
-    context 'メールアドレスのバリデーション' do
-      it 'メールアドレスが空欄でないこと' do
-        user.email = ''
-        expect(user).to be_invalid
-      end
-      
-      it 'メールアドレスに@が入っていないといけない' do
-        user.email = 'xxxexample.com'
-        expect(user).to be_invalid
-      end
-    end
-
-    context 'パスワードのバリデーション' do
-      it 'パスワードが5文字以下でないこと' do
-        user.password = '12345'
-        expect(user).to be_invalid
-      end
-
-      it 'パスワードが6文字以上であること' do
-        user.password = '123456'
-        expect(user).to be_valid
-      end
-    end
-
   end
+  
+  it "is invalid with a name 1 word" do
+    user = User.new(name: nil)
+    user.valid?
+    expect(user.errors[:name]).to include("は1文字以上で入力してください")
+  end
+  
+  it "is invalid without email" do
+    user = User.new(email: nil)
+    user.valid?
+    expect(user.errors[:email]).to include("を入力してください")
+  end
+  
+  it "is invalid without password" do
+    user = User.new(password: nil)
+    user.valid?
+    expect(user.errors[:password]).to include("を入力してください")
+  end
+  
+  
 end
