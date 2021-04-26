@@ -11,7 +11,7 @@
 
 <%= form_with model:gallery ,url: url, local:true do |f| %>
   <div class="gallery__form">
-    <%= f.collection_select(:travel_id, travels, :id, :date, {prompt:"共有する旅の日程を選択してください"}, {class:"select__box"}) %>
+    <%= f.collection_select(:travel_id, travels, :id, :start_time, {prompt:"共有する旅の日程を選択してください"}, {class:"select__box"}) %>
   </div>
 
 
