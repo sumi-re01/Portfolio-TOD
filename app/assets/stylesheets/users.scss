@@ -18,6 +18,32 @@ $form_btn: #f5b09b;
   background-color: #f1f1f1;
 }
 
+// カレンダー
+#calendar_trigger {
+  width: 300px;
+  padding: 5px 20px;
+  margin: 10px auto 0;
+  border-radius: 5px;
+  background-color: $form_btn;
+  color: white;
+  text-align: center;
+}
+
+.calendar_view {
+  display: none;
+  width: 600px;
+  margin: 20px auto;
+  
+  .title {
+    padding: 1px 3px;
+    border-radius: 3px;
+    font-size: 10px;
+    background-color: #f5b09b;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
 // 旅程表作成
 .travel__form {
   width: 100%;
@@ -113,5 +139,9 @@ $form_btn: #f5b09b;
     .gallery__items {
       display: block;
     }
+  }
+  
+  .calendar_view {
+    width: 100%;
   }
 }
