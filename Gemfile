@@ -48,8 +48,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-
-  # gem 'i18n_generators'
+  
+  gem 'spring-commands-rspec'
+  gem 'i18n_generators'
+  gem 'devise-i18n-views'
 end
 
 group :test do
@@ -104,6 +106,9 @@ gem 'font-awesome-sass'
 
 # pagenate
 gem 'kaminari'
+
+# カレンダー
+gem "simple_calendar", "~> 2.4"
 
 # デプロイ関係
 gem 'dotenv-rails'

@@ -3,7 +3,7 @@ class CreateTravels < ActiveRecord::Migration[5.2]
     create_table :travels do |t|
       t.integer :user_id, null: false
       t.string :title, null: false
-      t.date :date, null: false
+      t.datetime :date, null: false
 
       t.timestamps
     end
