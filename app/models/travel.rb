@@ -6,5 +6,8 @@ class Travel < ApplicationRecord
 
   validates :title, presence: true, length:{maximum: 10}
   validates :date, presence: true
-
+  
+  def start_time
+    self.date
+  end
 end
