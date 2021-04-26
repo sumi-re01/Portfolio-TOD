@@ -49,7 +49,7 @@ class TravelsController < ApplicationController
   end
 
   def travel_params
-    params.require(:travel).permit(:title, :date, :user_id)
+    params.require(:travel).permit(:title, :start_time, :user_id)
   end
 
 end

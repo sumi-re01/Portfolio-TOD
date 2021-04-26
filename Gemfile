@@ -107,8 +107,12 @@ gem 'font-awesome-sass'
 # pagenate
 gem 'kaminari'
 
+# カレンダー
+gem "simple_calendar", "~> 2.4"
+
 # デプロイ関係
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
+

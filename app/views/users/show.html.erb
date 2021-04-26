@@ -1,6 +1,11 @@
 <div class="main__field">
 
   <h1 class="page-name">MY PAGE</h1>
+  
+  <div id="calender_trigger">カレンダー</div>
+  <div class="view_calendar">
+    <%= render 'users/calendar', travels: @travels%>
+  </div>
 
   <div class="user__wrap">
     <div class="user__left back">
@@ -11,7 +16,7 @@
         <div class="error-messages"></div>
           <div class="form__box">
             <%= f.text_field :title, placeholder:"Please name your trip", class:"form" %>
-            <%= f.date_field :date, class:"form date" %>
+            <%= f.date_field :start_time, class:"form date" %>
           </div>
           <%= f.submit "予定を考える", class:"btn" %>
         <% end %>
@@ -30,7 +35,7 @@
         <div class="travel__link__btn">先日の旅を共有する</div>
       <% end %>
       <%#=form_with model: @gallery, url: new_gallery_path, local: true do |f| %>
-        <%#= f.collection_select(:travel_id, @travels, :id, :date, {prompt:"共有する旅の日程を選択してください", class:"select_box"}) %><br />
+        <%#= f.collection_select(:travel_id, @travels, :id, :start_time, {prompt:"共有する旅の日程を選択してください", class:"select_box"}) %><br />
         <%#= f.submit "日記を書く" %>
       <%# end %>
       <div class="gallery__index">
@@ -43,7 +48,7 @@
             <div class="gallery__introduce">
               <%= gallery.public_status ? '公開中' : '非公開' %>
               <p><%= gallery.address %></p>
-              <p><%= l gallery.travel.date %></p>
+              <p><%= l gallery.travel.start_time %></p>
             </div>
           </div>
         <% end %>
@@ -53,5 +58,6 @@
     </div>
 
   </div>
-
+  
+  <%= javascript_include_tag 'users/calender_trigger.js' %>
 </div>

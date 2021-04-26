@@ -1,0 +1,8 @@
+<%= month_calendar events: travels do |date, travels| %>
+  <%= date.day %>
+  <% travels.each do |travel| %>
+    <%= link_to travel_path(travel) do %>
+      <span class="title"><% travel.title %></span>
+    <% end %>
+  <% end %>
+<% end %>
