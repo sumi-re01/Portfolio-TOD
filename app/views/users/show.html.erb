@@ -43,7 +43,7 @@
               <%= image_tag gallery.images[0].to_s %>
             <% end %>
             <div class="gallery__introduce">
-              <%= gallery.public_status ? '公開中' : '非公開' %>
+              <span class="status"><%= gallery.public_status ? '公開中' : '非公開' %></span>
               <p><%= gallery.address %></p>
               <p><%= l gallery.travel.date %></p>
             </div>

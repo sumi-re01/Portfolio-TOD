@@ -20,6 +20,7 @@ $form_btn: #f5b09b;
 
 // カレンダー
 #calendar_trigger {
+  cursor: pointer;
   width: 300px;
   padding: 5px 20px;
   margin: 10px auto 0;
@@ -115,6 +116,11 @@ $form_btn: #f5b09b;
 
     .gallery__introduce {
       padding-left: 20px;
+      
+      .status {
+        padding: 5px 10px;
+        background-color: #f7edd2;
+      }
     }
   }
 }
