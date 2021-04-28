@@ -38,10 +38,12 @@
       <% end %>
         <%= f.submit "Sign up", class:"form__btn" %>
      <% end %>
-     <%= link_to "Log in", new_session_path(resource_name) %><br />
-     <%= link_to 'Sign up with Twitter', user_twitter_omniauth_authorize_path %><br />
-     <%= link_to 'Sign up with Google', user_google_oauth2_omniauth_authorize_path %>
 
+     <div class="btn__box">
+       <%= link_to 'Twitterで新規登録', user_twitter_omniauth_authorize_path, class:"devise__btn" %>
+       <%= link_to 'Googleで新規登録', user_google_oauth2_omniauth_authorize_path, class:"devise__btn" %>
+       <%= link_to "ログインはこちらから", new_session_path(resource_name), class:"devise__btn" %>
+       </div>
 
     </div>
 </div>

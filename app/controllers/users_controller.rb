@@ -6,7 +6,12 @@ class UsersController < ApplicationController
     @travel = @user.travels.new
     @travels = @user.travels.all.page(params[:page])
     @galleries = Gallery.where(user_id: @user.id).all.page(params[:page]).per(2)
-    # @gallery = Gallery.new
+
+    if @user == current_user
+      render :show
+    else
+      redirect_to user_path(current_user)
+    end
   end
 
   def edit
