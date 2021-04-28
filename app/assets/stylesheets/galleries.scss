@@ -15,6 +15,15 @@
   padding: 30px;
   background-color: #f1f1f1;
 
+  h2 {
+    display: inline-block;
+    margin: 0 0 5px 20px;
+  }
+
+  .book-mark {
+    display: inline-block;
+  }
+
   p {
     line-height: 2em;
     background-image: linear-gradient(transparent 0, transparent 97%, #ddd 100%);
@@ -23,9 +32,20 @@
     background-color: white;
     padding: 0 1.3em;
   }
+
+  .user_info {
+    margin: 8px auto;
+    display: flex;
+    justify: center;
+  }
   .prf-img {
     width: 20px;
     height: 20px;
+  }
+
+  .action_btn {
+    padding: 3px 5px;
+    background-color: #dfece1;
   }
 
   &__bottom {

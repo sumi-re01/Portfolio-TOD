@@ -1,7 +1,7 @@
 <div class="main__field">
 
   <h1 class="page-name">MY PAGE</h1>
-  
+
   <div id="calendar_trigger">カレンダー</div>
   <div class="calendar_view">
     <%= render 'users/calendar'%>
@@ -34,7 +34,7 @@
       <%= link_to new_gallery_path do %>
         <div class="travel__link__btn">先日の旅を共有する</div>
       <% end %>
-      
+
       <div class="gallery__index">
         <h3>投稿記事一覧</h3>
         <% @galleries.each do |gallery| %>

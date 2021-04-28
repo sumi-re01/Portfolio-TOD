@@ -2,7 +2,7 @@
   <% travels.each do |travel| %>
   <div class="travel__item">
     <%= link_to travel_path(travel) do %>
-      <%= travel.date %>
+      <%= l travel.date %>
       <%= travel.title %>
     <% end %>
     <%= link_to travel_path(travel), method: :delete, remote: true do %>
