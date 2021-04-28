@@ -3,9 +3,11 @@
 
     <div class="gallery__text">
       <h2><%= @gallery.travel.title %></h2>
-      <div class="book-mark" id="mark_<%= @gallery.id %>">
-        <%= render partial: 'marks/mark', locals: {gallery: @gallery}%>
-      </div>
+      <%if user_signed_in? %>
+        <div class="book-mark" id="mark_<%= @gallery.id %>">
+          <%= render partial: 'marks/mark', locals: {gallery: @gallery}%>
+        </div>
+      <% end %>
       <p class="gallery__body">
         <%= @gallery.text %><br />
         <%= l @gallery.created_at, format: :long%>
