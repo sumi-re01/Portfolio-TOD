@@ -3,15 +3,19 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def show
-    @travel = @user.travels.new
-    @travels = @user.travels.all.page(params[:page])
-    @galleries = Gallery.where(user_id: @user.id).all.page(params[:page]).per(2)
-
-    if @user == current_user
-      render :show
-    else
+    if @user != current_user
       redirect_to user_path(current_user)
     end
+      @travel = @user.travels.new
+      @travels = @user.travels.all.page(params[:page])
+      @galleries = Gallery.where(user_id: @user.id).all.page(params[:page]).per(2)
+
+      # pagenateの非同期
+      respond_to do |format|
+        format.html
+        format.js { render :action => "pagenate" }
+      end
+
   end
 
   def edit
