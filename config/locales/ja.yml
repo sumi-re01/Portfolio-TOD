@@ -56,7 +56,7 @@ ja:
     - 土曜日
     formats:
       default: "%Y年%m月%d日"
-      long: "%Y年%m月%d日(%a)"
+      long: "%Y年%m月%d日"
       short: "%m月%d日"
     month_names:
     -
@@ -217,10 +217,11 @@ ja:
   time:
     am: 午前
     formats:
-      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      default: "%Y年%m月%d日"
       long: "%Y年%m月%d日"
       short: "%m月%d日"
     pm: 午後
   datetime:
     formats:
       default: "%Y年%m月%d日"
+      long: "%Y年%m月%d日"
