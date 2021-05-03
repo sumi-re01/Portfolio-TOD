@@ -1,6 +1,7 @@
 class Gallery < ApplicationRecord
 
   belongs_to :travel
+  belongs_to :user
   has_many :marks, dependent: :destroy
 
   mount_uploaders :images, ImageUploader

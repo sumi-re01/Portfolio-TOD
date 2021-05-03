@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :sns_credentials, dependent: :destroy
   has_many :travels, dependent: :destroy
+  has_many :galleries
   has_many :marks, dependent: :destroy
 
   validates :name, length: { minimum: 1, maximum: 10 }

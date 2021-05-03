@@ -1,6 +1,7 @@
 class GalleriesController < ApplicationController
   before_action :authenticate_user!,except: [:show, :index]
   before_action :set_gallery, only: [:edit, :update, :show, :destroy]
+  before_action :if_not_user_eq, only: [:edit, :update]
   before_action :set_own_travels, only: [:new, :update, :edit]
 
 
@@ -20,11 +21,6 @@ class GalleriesController < ApplicationController
   end
 
   def edit
-    if @gallery.user_id == current_user.id
-      render :edit
-    else
-      redirect_to gallery_path(@gallery)
-    end
   end
 
   def update
@@ -68,6 +64,12 @@ class GalleriesController < ApplicationController
 
   def set_gallery
     @gallery = Gallery.find(params[:id])
+  end
+
+  def if_not_user_eq
+    if @gallery.user_id != current_user.id
+      redirect_to gallery_path(@gallery)
+    end
   end
 
   def gallery_params
